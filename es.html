@@ -1,0 +1,1454 @@
+<!doctype html>
+<html lang="es"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Preload assets -->
+  <link rel="preload" href="js/application.js" as="script">
+  <link rel="preload" href="img/logo.png" as="image">
+  <link rel="preload" href="img/clouds.png" as="image">
+  <link rel="preload" href="img/grass.png" as="image">
+  <link rel="preload" href="img/water.png" as="image">
+  <link rel="preload" href="https://backend.flipstarter.cash/fonts/cairo.woff2" as="font" crossorigin="">
+  <link rel="preload" href="https://backend.flipstarter.cash/fonts/icons.woff" as="font" crossorigin="">
+
+  <!-- Inform the browser that we want it to prepare three connections to the backend -->
+  <link rel="preconnect" href="https://backend.flipstarter.cash">
+  <link rel="preconnect" href="https://backend.flipstarter.cash">
+  <link rel="preconnect" href="https://backend.flipstarter.cash">
+
+  <!-- preload fonts -->
+  <style>
+    /** Fonts **/
+    @font-face
+    {
+      font-display: swap;
+      font-family: 'Cairo';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Cairo'), local('Cairo-Regular'), url('https://backend.flipstarter.cash/fonts/cairo.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    @font-face
+    {
+      font-display: swap;
+      font-family: 'icons';
+      font-weight: normal;
+      font-style: normal;
+      font-display: block;
+      src: url('https://backend.flipstarter.cash/fonts/icons.woff') format('woff');
+    }
+  </style>
+
+  <!-- -->
+  <link rel="icon" href="img/logo.png">
+
+  <link href="css/materialize.min.css" type="text/css" rel="stylesheet">
+  <link href="css/style.css" type="text/css" rel="stylesheet">
+
+  <!-- Website metadata -->
+  <title>BCHN, Flipstarter</title>
+  <meta property="og:title" content="Flipstarter: Bitcoin Cash Node">
+  <meta property="og:description" content="Bitcoin Cash Node Flipstarter Funding Campaign">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bchn.flipstarter.cash/">
+  <meta property="og:image" content="https://bchn.flipstarter.cash/img/bchn-logo2.png">
+  <meta property="og:image:alt" content="Bitcoin Cash Node logo image.">
+  <meta property="og:article:section" content="Technology">
+  <meta property="og:article:tag" content="Bitcoin">
+  <meta property="og:article:tag" content="Bitcoin Cash">
+  <meta property="og:article:tag" content="Bitcoin Cash Node">
+  <meta property="og:article:tag" content="BCH">
+  <meta property="og:article:tag" content="Cryptocurrencies">
+  <meta property="og:article:tag" content="Fundraising">
+  <meta property="og:article:tag" content="Infrastructure">
+</head>
+<body class="clouds">
+  <div class="grass">
+    <div class="background">
+
+      <!-- Site header -->
+      <header id="header" class="container row center">
+        <h1 class="cols s12 m12 l12">
+          <img src="img/logo.png" alt="Flipstarter logotype">
+          <span>Flipstarter</span>
+        </h1>
+        <p class="col s12 m12 l12" data-string="siteIntro">La financiación de la infraestructura de Bitcoin Cash es importante, y la diversidad de esa infraestructura crea un ecosistema resiliente. Flipstarter proporciona una vía para que cualquier proyecto se relacione con posibles contribuidores de una manera que fomente responsabilidad para los proyectos y ecuanimidad para los contribuidores.</p>
+        <ul class="col s10 m10 l10 push-s1 push-m1 push-l1" style="display: flex; justify-content: center; text-align: left;">
+          <li class="col">
+            <a class="valign-wrapper" target="_blank" href="https://read.cash/@flipstarter/introducing-flipstarter-31ce86f3">
+              <i class="icon-info"></i>
+              &nbsp;
+              <span data-string="linkWhatIs">¿Qué es Flipstarter?</span>
+            </a>
+          </li>
+          <li class="col">
+            <a class="valign-wrapper" target="_blank" href="https://read.cash/@flipstarter/how-to-support-a-flipstarter-campaign-f27240d9">
+              <i class="icon-info"></i>
+              &nbsp;
+              <span data-string="linkHowTo">¿Cómo usar Flipstarter?</span>
+            </a>
+          </li>
+          <li class="col">
+            <a class="valign-wrapper" target="_blank" href="https://read.cash/@flipstarter/flipstarter-faq-66c56b03">
+              <i class="icon-info"></i>
+              &nbsp;
+              <span data-string="linkFAQ">Preguntas frecuentes.</span>
+            </a>
+          </li>
+        </ul>
+      </header>
+
+      <!-- Site content -->
+      <main class="container row z-depth-2">
+
+        <!-- Campaign -->
+        <article id="campaign" class="col s12 m12 l8" style="margin-bottom: 0.75rem;">
+          <h1 style="display: none;">Campaign</h1>
+
+          <!-- Campaign overview -->
+          <section id="overview">
+            <h2 style="display: none;">Campaign overview</h2>
+            <div style="float: left;">
+              <span class="valign-wrapper" style="float: left;">
+                <i class="icon-access_time"></i>
+                <span id="timerLabel" data-string="fullfilledLabel">Finaciada</span>
+                <b id="campaignExpiration">hace 3 meses</b>
+              </span>
+            </div>
+            <div style="float: right;">
+              <span class="valign-wrapper" style="float: left;">
+                <i class="icon-bookmark_border"></i>
+                <span id="compaignContributionAmount">978.00</span>
+                <i>/</i>
+                <span id="campaignRequestAmount">978.00</span>
+                <b>BCH</b>
+              </span>
+            </div>
+            <div class="progress">
+              <div class="determinate" id="campaignProgressBar" style="width: 100%;"></div>
+              <div class="determinate" id="campaignContributionBar" style="left: 100%; width: 0%;"></div>
+            </div>
+          </section>
+
+          <!-- Campaign heading -->
+          <header id="campaignAbstract"><h2 id="flipstart-bitcoin-cash-node">Flipstart Bitcoin Cash Node</h2>
+            <p>Bitcoin Cash Node (BCHN) es un proyecto de nodo completo que apunta a proporcionar una implementación de cliente segura para la red BCH, respaldado por una comunidad comprometida de desarrolladores profesionales, testers y personal de soporte.</p>
+            <p>Nuestro software ya funciona como un reemplazo directo de Bitcoin ABC, y seguirá la cadena más larga durante la actualización de red de Mayo 2020 sin contribuir de manera alguna al riesgo de división de la cadena.</p>
+            <p>Nuestra visión para BCH es la de una red que sea robusta mediante la competencia y la cooperación, que sea ejecutada en una diversa gama de programas de cliente, que cumpla con los niveles profesionales de desarrollo, mantenimiento y soporte. Ayudaremos a crear un entorno en el que las decisiones estén respaldadas por la investigación y la evidencia, así como que la toma de decisiones involucre las partes interesadas y experiencias de todo el ecosistema.</p>
+            <p>El proyecto Bitcoin Cash Node cuenta con una política de puertas abiertas, dando la bienvenida a todos los niveles de experiencia desde todos los rincones de Bitcoin Cash. Discutimos los asuntos abiertamente, invitamos a las partes interesadas a participar y nos mantenemos bajo altos estándares de responsabilidad.</p>
+            <p>En esta propuesta de financiación, esperamos obtener los recursos necesarios para atender algunas de las necesidades inmediatas de los mineros, empresas y usuarios de Bitcoin Cash, proporcionando una sólida investigación e implementación para ellos. También tenemos la intención de establecer la estructura necesaria para asegurarnos de estar debidamente equipados para mantenernos en la próxima etapa de desafíos.</p>
+          </header>
+
+          <!-- Campaign donation form -->
+          <fieldset id="donateField" class="row fullfilled">
+            <div id="donateStatus" class="col s12 m12 l12" style="text-align: center;" data-string="statusFullfilled">La campaña ha sido financiada.</div>
+
+            <div id="donateForm" class="col s12 m12 l12 hidden">
+              <div class="input-field col s1 m1 l1" style="padding: 0;">
+                <i style="display: inline-block; width: 3rem; height: 3rem; text-align: center; opacity: 0.50; font-size: 2.25rem; line-height: 3.25rem;" class="icon-attach_money"></i>
+              </div>
+              <div class="input-field col s11 m5 l6" style="padding: 0; text-align: center;">
+                <input type="range" min="0.80" max="100" value="0" step="0.20" class="slider" id="donationSlider" style="height: 3rem; padding: 0; width: calc(100% - 2rem); margin: 0rem;">
+              </div>
+              <div class="input-field col s12 m6 l5" style="padding: 0 0.75rem; margin: 0.75rem 0rem;">
+                <button id="donateButton" class="btn waves-effect waves-light green" style="width: 100%; padding: 0; margin: 0rem;" disabled="">
+                  <span id="donateText" data-string="donateText">Promete</span>
+                  <span id="donationAmount" data-satoshis="0">0 BCH (0.00 EUR)</span>
+                </button>
+              </div>
+            </div>
+
+            <div id="donateSection" class="hidden col s12 m12">
+              <div class="col" style="background-color: white; border-radius: 0.25rem; border: 1px solid rgba(0, 0, 0, 0.31); padding-bottom: 1.5rem; padding-top: 0.75rem;">
+                <div class="col s12 m12 l12" style="margin-top: 0.75rem;">
+                  <div class="row" style="display: flex; flex-direction: column; justify-content: center; height: 10.50rem; padding: 1rem; margin: 0rem; margin-top: 0.5rem; border: 1px solid rgb(169, 169, 169); box-shadow: inset 0rem 0.10rem 0.25rem rgba(0, 0, 0, 0.13);">
+                    <div class="input-field col s12 m12 l12" style="">
+                      <i style="opacity: 0.50; font-size: 2.25rem; line-height: 2.25rem;" class="icon-person_outline prefix"></i>
+                      <input id="contributionName" type="text" maxlength="24">
+                      <label for="contributionName" data-string="usernameLabel">Nombre (opcional)</label>
+                    </div>
+
+                    <div class="input-field col s12 m12 l12" style="">
+                      <i style="opacity: 0.50; font-size: 2.00rem; line-height: 2.50rem;" class="icon-chat_bubble_outline prefix"></i>
+                      <input id="contributionComment" type="text" maxlength="120">
+                      <label for="contributionComment" data-string="commentLabel">Commentario (opcional)</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col s12 m12 l3" style="margin-top: 0.75rem;">
+                  <small style="display: inline-block; width: 100%; text-align: center;" data-string="copyLabel">1. Copiar detalles</small>
+                  <textarea rows="5" id="template" name="template" style="height: 7rem; font-family: monospace; font-size: small; margin: 0; margin-top: 0.5rem; padding: 1rem; background-color: white;">ewAiAG8AdQB0AHAAdQB0AHMAIgA6AFsAewAiAHYAYQBsAHUAZQAiADoAOQA3ADgAMAAwADAAMAAwADAAMAAwACwAIgBhAGQAZAByAGUAcwBzACIAOgAiAGIAaQB0AGMAbwBpAG4AYwBhAHMAaAA6AHAAcgBuAGMAMgBlAHgAaAB0ADMAegB4AGwAcgBxAHEAYwBhAHQANgA5ADAAdABjADgANQBjAHYAZgB1AHkAcABuAGcAaAA3AHMAegB4ADYAbQBrACIAfQBdACwAIgBkAGEAdABhACIAOgB7ACIAYQBsAGkAYQBzACIAOgAiACIALAAiAGMAbwBtAG0AZQBuAHQAIgA6ACIAIgB9ACwAIgBkAG8AbgBhAHQAaQBvAG4AIgA6AHsAIgBhAG0AbwB1AG4AdAAiADoAMAB9ACwAIgBlAHgAcABpAHIAZQBzACIAOgAxADUAOAA4ADkAOAAyADMAOQA5AH0A</textarea>
+                  <button id="copyTemplateButton" class="btn waves-effect waves-light green" style="width: 100%;" data-string="copyButton">Copiar detalles</button>
+                </div>
+                <div class="col s12 m12 l6" style="margin-top: 0.75rem;">
+                  <small style="display: inline-block; width: 100%; text-align: center;" data-string="instructionsLabel">2. Preparar promesa</small>
+                  <p id="instructions" style="display: flex; justify-content: center; align-items: center; text-align: center; font-size: small; height: 7rem; padding: 1rem; margin-bottom: 7px; margin-top: 0.5rem; border: 1px solid rgb(169, 169, 169);" data-string="instructions">Instala el plugin para la cartera desktop Electron-Cash y usa la pestaña flipstarter para preparar tu promesa.</p>
+                  <div style="display: flex; align-items: center; justify-content: space-evenly;">
+                    <a id="downloadButton" class="btn" style="display: flex; align-items: center; justify-content: flex-start; background-color: transparent; color: black; box-shadow: none;" href="https://gitlab.com/flipstarter/flipstarter-electron-cash/uploads/a34641f9863164e82a6ab72314a02311/flipstarter-1.2.zip">
+                      <i class="icon-download"></i>
+                      <span style="margin-left: 0.25rem;" data-string="downloadText">Descargar</span>
+                    </a>
+                    <a id="linkInstructionsButton" class="btn" target="_blank" style="display: flex; align-items: center; justify-content: flex-start; background-color: transparent; color: black; box-shadow: none;" href="https://read.cash/@flipstarter/how-to-support-a-flipstarter-campaign-f27240d9">
+                      <i class="icon-info"></i>
+                      <span style="margin-left: 0.25rem;" data-string="instructionLink">Instrucciones</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="col s12 m12 l3" style="margin-top: 0.75rem;">
+                  <small style="display: inline-block; width: 100%; text-align: center;" data-string="commitLabel">3. Pegar promesa</small>
+                  <textarea rows="5" id="commitment" name="commitment" data-placeholder="PasteHere" style="height: 7rem; font-family: monospace; font-size: small; margin: 0; margin-top: 0.5rem; padding: 1rem; background-color: white;" placeholder="Pegar aquí"></textarea>
+                  <button id="commitTransaction" class="btn waves-effect waves-light green" style="width: 100%;" disabled="disabled" data-string="commitButton">Enviar promesa</button>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Campaign details. -->
+          <section id="campaignDetails" class="row"><h1 id="bitcoin-cash-node---propuesta-flipstarter">Bitcoin Cash Node - Propuesta Flipstarter</h1>
+            <p>Versión: 1.1</p>
+            <p>Fecha de Revisión: 4 Abril 2020</p>
+            <p>Autores: freetrader (freetrader#105), imaginary_username (im_uname#102) (con la ayuda de muchos)</p>
+            <p>Revisores: emergent_reasons#100, imaginary_username (im_uname#102)</p>
+            <p>Correspondencia: <a href="mailto:info@bitcoincashnode.org">info@bitcoincashnode.org</a></p>
+            <h2 id="contenidos">Contenidos</h2>
+            <ol>
+              <li><a href="#1-evaluaci%C3%B3n-de-la-situaci%C3%B3n">Evaluación de la situación</a></li>
+              <li><a href="#2-objetivo-general">Objetivo general</a></li>
+              <li><a href="#3-alcance">Alcance</a></li>
+              <li><a href="#4-entregables">Entregables</a></li>
+              <li><a href="#5-detalles-de-alcance">Detalles de alcance</a></li>
+              <li><a href="#6-presupuesto">Presupuesto</a></li>
+              <li><a href="#7-cronograma">Cronograma</a></li>
+              <li><a href="#8-pol%C3%ADticas-procesos-cultura">Políticas / procesos / cultura</a></li>
+              <li><a href="#9-responsabilidad">Responsabilidad</a></li>
+              <li><a href="#10-planes-de-respaldo">Planes de respaldo</a></li>
+              <li><a href="#11-ap%C3%A9ndices">Apéndices</a><ul>
+                <li><a href="#a-hist%C3%B3rico-del-equipo-personas">A) Histórico del equipo, personas</a></li>
+                <li><a href="#b-hist%C3%B3rico-de-logros">B) Histórico de logros</a></li>
+                <li><a href="#c-hist%C3%B3rico-de-presupuestos-y-disposici%C3%B3n-de-fondos">C) Histórico de presupuestos y disposición de fondos</a></li>
+                <li><a href="#d-gastos-operativos-actuales">D) Gastos operativos actuales</a></li>
+                <li><a href="#e-faq">E) FAQ</a></li>
+                <li><a href="#f-referencias">F) Referencias</a></li>
+              </ul>
+            </li>
+          </ol>
+          <hr>
+          <h2 id="1-evaluación-de-la-situación">1. Evaluación de la situación</h2>
+          <p>El atributo más importante de una criptomoneda es su red. Si bien los maravillosos avances técnicos que captan los titulares son muy deseables, una criptomoneda no es nada sin una robusta red de usuarios, inversores y desarrolladores downstream que se apoyen entre ellos. Diferentes sectores tienen diferentes necesidades, pero comparten el requerimiento de que sus desarrolladores de protocolo provean un entorno robusto y predecible para prosperar, minimizar sus costos de operación y tomar decisiones acertadas que beneficien a todos de una forma objetiva.</p>
+          <p>En este sentido, debemos observar de una forma certera al ecosistema Bitcoin Cash tal cual es hoy y darnos cuenta de que hay mucho por mejorar. "Implementar la hoja de ruta" suena muy bien, pero se ha prestado poca atención a la solidez de los enfoques, a la robustez de cuestiones prácticas quizás menos llamativas, como la consistencia de RPC, así como llegar a un acuerdo entre mineros, empresas y desarrolladores. El resultado, a la vista de todos, ha sido demasiado doloroso: Bitcoin Cash ha sido un elemento costoso de apoyar incluso para sus proponentes, se ha dedicado mucho tiempo a cosas que no contribuyen al efecto de red, y la incertidumbre sobre posibles cambios ha impactado de forma constante la escena sin una adecuada investigación ni infraestructura para convencer de lo contrario.</p>
+          <p>Bitcoin Cash Node tiene como objetivo cambiar esto, comenzando con una modesta lista de asuntos inmediatos que queremos abordar a medida que adoptamos un enfoque sólido hacia la hoja de ruta, dando prioridad al crecimiento de usuarios y de red en todo momento.</p>
+          <h2 id="2-objetivo-general">2. Objetivo general</h2>
+          <p>Bitcoin Cash Node, como nodo competidor y equipo de desarrollo de protocolo, tiene como objetivo proporcionar una plataforma confiable y profesional cuyo desarrollo sea responsivo a las continuas necesidades del ecosistema. Los desarrolladores de la capa base tienen dos mandatos: garantizar que el crecimiento sostenible de la red pueda continuar sin interrupciones y proporcionar un constante progreso en aras de la implementación de actualizaciones que el ecosistema necesite. Con tu apoyo, tenemos la intención de cumplir con ambos.</p>
+          <p>Bitcoin Cash Node proporcionará un software de nodo profesional y seguro que pueda ser utilizado con confianza por: mineros, pools, sitios de cambio, procesadores de pagos, comerciantes y una variedad de empresas diversas, así como usuarios domésticos. Los cambios serán investigados y probados lo mejor que nuestras habilidades lo permitan, con el acompañamiento de datos y evaluaciones. Escucharemos y justificaremos nuestras acciones.</p>
+          <p>Con esta propuesta, esperamos reunir los recursos necesarios no solo para mantener la solidez del código e implementar actualizaciones, con un enfoque en las preocupaciones inmediatas del ecosistema, sino también para establecer las herramientas y la infraestructura necesarias para inspirar confianza en Bitcoin Cash como una forma de dinero utilizable, promocionable y confiable. Te invitamos a unirte.</p>
+          <h3 id="compromiso-con-un-panorama-de-clientes-diverso">Compromiso con un panorama de clientes diverso</h3>
+          <p>No creemos que nuestro responsable principal, o de hecho nuestro equipo, deban tener la palabra exclusiva sobre las reglas de la red. Esta postura se refleja en el apoyo y estímulo que brindamos a las iniciativas que diversifican el panorama de minería y aplicaciones, de modo que, además de nuestros continuos esfuerzos por mantener una comunicación abierta, no pretendemos estar en una posición dictatorial con poder arbitrario.</p>
+          <p>La existencia y la adopción de otros clientes aumentan la robustez de la red, atraen más talento al ecosistema y permiten que BCHN haga un bien mayor a que si tuviéramos una opinión absoluta sobre una red menor y monocultural.</p>
+          <h2 id="3-alcance">3. Alcance</h2>
+          <p>Nuestra primera propuesta de recaudación de fondos tiene como objetivo cubrir las siguientes áreas. El trabajo comenzará en mayo 2020. Teniendo en cuenta que el final previsto para esta campaña flipstarter es a comienzos de mayo 2020.</p>
+          <p>A medida que los entregables sean re-evaluados hacia finales de 2020, tenemos pensado proporcionar el adecuado retorno a la comunidad en termino de comentarios y análisis, así como recaudar fondos para ítems específicos con la intención de llevar a cabo la próxima etapa de nuestra misión.</p>
+          <p>Para esta recaudación de fondos inicial, nuestro alcance cubriría lo expuesto a continuación bajo un presupuesto propuesto de 1122 BCH (de los cuales 144 BCH ya fueron donados antes de esta campaña):</p>
+          <ol>
+            <li><p><strong>Compilar la investigación existente del Algoritmo de Ajuste de Dificultad (DAA)</strong> y <strong>proporcionar una solución mejorada</strong> sobre el status quo. La nueva solución debe ofrecer un ajuste más rápido y robusto que disminuya las desventajas para los mineros "leales", al tiempo que reduzca la variación como un beneficio para los tiempos de confirmación del usuario.</p>
+              <p><strong>Presupuesto: 12k USD</strong> <em>(Equivalente a 1 tiempo completo (FTE) durante un período de 3 meses, fecha de finalización a principios-mediados de agosto)</em></p>
+              <hr>
+            </li>
+            <li><p><strong>Evaluar el software existente con respecto a diferentes escenarios del manejo de cadenas no confirmadas</strong> e <strong>identificar cuellos de botella</strong> de manera clara en lugar de afirmarlos arbitrariamente. La mejora en (1) puede disminuir la urgencia de extender el límite actual de 50 tx, pero cadenas mucho más largas continúan siendo una característica deseable y al menos debería investigarse seriamente.</p>
+              <p><strong>Presupuesto: 9k USD</strong> <em>(0.9 FTE en un período de 2.5 meses desde mediados de agosto hasta finales de octubre)</em></p>
+              <hr>
+            </li>
+            <li><p><strong>Proporcionar una infraestructura de testnet más robusta</strong> que sea útil para los desarrolladores de downstream. La red testnet actual de Bitcoin Cash está lejos de ser robusta, con actividades de minería irregulares y disponibilidad de servicios irregulares (trest, SLP). Las características experimentales y las actualizaciones también deberían ser proporcionadas en un testnet volátil separado que sirva como área de puesta a punto para desarrolladores de vanguardia. Un mejor testnet es una de las principales solicitudes de nuevos desarrolladores y proyectos que intentan ingresar al ecosistema BCH. El testnet también es comúnmente insuficiente para el actual desarrollo de proyectos. Una pequeña inversión en un mejor testnet ayudará a atraer nuevos proyectos, reducir las tasas de defectos y reducir el costo de desarrollo en BCH.</p>
+              <p><strong>Presupuesto: 20k USD</strong> <em>(parte significativa de los costos de infraestructura, &lt;0.25 FTE, fecha de finalización a principios de noviembre)</em></p>
+              <hr>
+            </li>
+            <li><p><strong>Investigación e implementación de la capacidad para manejar números mayores</strong> más allá de 32 bits, lo que tiene un significativo impacto en la facilidad de programación de toda una clase de smart contracts que a su vez proporcionan valor financiero a Bitcoin Cash.</p>
+              <p><strong>Presupuesto: 24.8k USD</strong> <em>(se necesitan 2 FTE en un período de 3 meses, fecha de finalización a principios-mediados de agosto)</em></p>
+              <hr>
+            </li>
+            <li><p><strong>Mantenimiento y soporte de software en curso</strong>. Backport de importantes correcciones de errores y actualizaciones desde Bitcoin Core, y proporcionar nuestras propias correcciones basadas en comentarios de los usuarios. Cubrir los numerosos vacíos dejados por la inexistencia de especificaciones de las funcionalidades y protocolo en curso.</p>
+              <p><strong>Presupuesto: 104k USD</strong> <em>(~ 2.25 FTE en un período de 6 meses desde principios de mayo hasta principios de noviembre)</em></p>
+              <hr>
+            </li>
+            <li><p><strong>Desarrollo de procesos de interacción del ecosistema</strong>. Establecer contacto regular con las partes interesadas clave (sitios de cambio, pools, mineros, otras grandes empresas y agentes representativos ) para obtener comentarios oportunos.</p>
+              <p><strong>Presupuesto: 30k USD</strong> <em>(a tiempo parcial (12.5 horas/semana), asistencia al responsable principal durante un período variable a partir de mayo)</em></p>
+              <hr>
+            </li>
+            <li><p><strong>Reportes periódicos del proyecto</strong> sobre la hoja de ruta, la gobernanza del proyecto, el progreso técnico y la contabilidad financiera, incluyendo un informe general mensual sin restricciones para tener en cuenta los compromisos del proyecto frente a los logros obtenidos. Las entregas de estos informes ya se han puesto a disposición y pueden ser obtenidas en <a href="https://read.cash/@freetrader">https://read.cash/@freetrader</a>.</p>
+              <p><strong>Presupuesto: 10.7k USD</strong> <em>(asignado al desarrollo y mantenimiento del sitio web para colaborar en el reporte e información, la responsabilidad compartida entre el responsable principal que trabaja a tiempo completo en el proyecto y el representante de la comunidad a tiempo parcial presupuestado anteriormente).</em></p>
+              <hr>
+            </li>
+            <li><p><strong>Establecer nuestra propia infraestructura de crowdfunding</strong>. Planeamos hostear nuestros propios mecanismos de recaudación de fondos o utilizar una plataforma de terceros con contratos de garantía como un camino hacia la financiación voluntaria y sostenible. Como el equipo de Flipstarter ha hecho su implementación fácilmente portable, planeamos analizar esa opción primero, sin descartar otros enfoques.</p>
+              <p><strong>Presupuesto: 10.12k USD</strong> <em>(~ 4k USD para la configuración inicial y el desarrollo por un período de 2 meses a partir de principios de mayo, los fondos restantes serán destinados al desarrollo de 12 campañas de recaudación de fondos posteriores. Se requiere ~0,5 FTE dividido entre un desarrollador de front-end y uno de back-end).</em></p>
+            </li>
+          </ol>
+          <p>Los entregables asociados a estos ítems se describen con mayor detalle en <a href="#4-entregables">Entregables</a>.</p>
+          <p>Detalles adicionales, incluyendo estimaciones de costos, se encuentran en la sección <a href="#5-detalles-de-alcance">Detalles de alcance</a>.</p>
+          <h2 id="4-entregables">4. Entregables</h2>
+          <p>El siguiente set de entregables constituyen objetivos prácticos y medibles, destinados a cumplir el alcance mencionado anteriormente.</p>
+          <p>Más detalles sobre cómo estos entregables serán realizados, incluyendo personal, cronograma y presupuestos, son también incluidos.</p>
+          <ol start="0">
+            <li><p><strong>Un equipo capaz</strong></p>
+              <p>Nuestro equipo actualmente está compuesto por un responsable principal a tiempo completo que realiza gran parte de la planificación del proyecto y la supervisión diaria del trabajo, con la asistencia de varios encargados de mantenimiento a tiempo parcial, algunos de los cuales también realizan desarrollo a tiempo parcial, pruebas, soporte y roles de mantenimiento de infraestructura en el proyecto. Este grupo de contribuyentes esencialmente voluntarios comprende quizás 2-3 ingenieros FTE trabajando para el proyecto.</p>
+              <p>Adicionalmente, al momento contamos con desarrolladores de excelente calificación apoyando el proyecto en su tiempo libre en base a su mejor esfuerzo, pero podrían comprometerse con tiempo específicos existiendo el nivel correcto de soporte.</p>
+              <p>Si los objetivos de financiación son cumplidos, nos permitiría adentrarnos en un terreno más sólido, ya sea en forma de compromisos más estables de los contribuidores existentes o con ayuda nueva. Se estima que esto podría incluir 2 FTE adicionales de desarrolladores experimentados y calificados que serían suficientes para cubrir nuestra carga de trabajo de desarrollo (proyectada a alcanzar aproximadamente 4.5 FTE en el período de mayo hasta mediados de agosto).</p>
+              <p>Para mejorar la comunicación y la representación del proyecto, así como liberar tiempo del responsable principal para que pueda enfocarse en la dirección del desarrollo y el mantenimiento, tenemos planeado el nombramiento de un representante del proyecto a tiempo parcial ya dentro del presupuesto del proyecto.</p>
+            </li>
+            <li><p><strong>Reporte de evaluación sobre Algoritmo de Ajuste de Dificultad (DAA)</strong></p>
+              <p>Evaluaremos a los candidatos en sintonía con el ecosistema amplio y presentaremos claramente las ventajas y desventajas de los algoritmos evaluados al público. El reporte de la evaluación debería estar disponible a principios de julio.</p>
+            </li>
+            <li><p><strong>Especificación, implementación y pruebas para el nuevo DAA propuesto para la actualización de Noviembre 2020</strong></p>
+              <p>Un documento de especificación para el mejor candidato de DAA encontrado en base a nuestra investigación anterior (entregable 1). Se procederá con la publicación, seguida de la implementación y pruebas, antes del feature freeze del 15 de agosto 2020. El acuerdo dentro del ecosistema en relación a las discusiones anteriores nos llevará a integrar el algoritmo al cliente BCHN que será activado en noviembre. Estimamos que al menos las carteras adherentes al protocolo Electron-cash (EC y Edge Wallet) o que usen Bitcoincashj necesitarán ayuda para migrar, así como algunas otras.</p>
+            </li>
+            <li><p><strong>Evaluar los cuellos de botella en el rendimiento de las cadenas de tx no confirmadas</strong></p>
+              <p>Punto de referencia en relación a las permutaciones de escenarios posibles con respecto a cadenas de tx no confirmadas, y su impacto provocado por diferentes reglas de mempool. Parte de la evaluación del desempeño ha sido generada en debates anteriores y se la puede reutilizar, pero es necesario evaluar una mayor cantidad de escenarios.</p>
+              <p>Un reporte técnico describirá los resultados de referencia, los cuellos de botella identificados y las recomendaciones para solucionarlos.</p>
+            </li>
+            <li><p><strong>Una versión configurada para proporcionar un testnet3 y un testnet experimental separados</strong></p>
+              <p>Esto debería proporcionar una capacidad de testnet robusta para el proyecto. Será entregado en forma de infraestructura a la que se podrá acceder mediante la configuración de nodos e instrucciones sobre cómo acceder y participar en los testnets.</p>
+            </li>
+            <li><p><strong>Soporte continuo de testnet</strong></p>
+              <p>Establecer servicios estables en un testnet confiable: Minería, un pool para minar, servidor Electron-cash (vía Fulcrum o Electrs), endpoints SLPDB y REST, manteniendo niveles razonables de servicio para los desarrolladores durante todo el año.</p>
+            </li>
+            <li><p><strong>Manejo de números mayores</strong></p>
+              <p>Versión que permita que los códigos de operación aritméticos existentes manejen números mayores, tentativamente limitados a 64 bits. Algunos conceptos se han discutido en el ciclo de la actualización anterior, y tenemos la intención de avanzar con base en ellos.</p>
+            </li>
+            <li><p><strong>Lanzamientos regulares de BCHN</strong></p>
+              <p>Como resultado de los esfuerzos de mantenimiento, lanzaremos versiones menores que incluyan correcciones de software y optimizaciones de rendimiento. Estos son importantes para mantener a nuestros usuarios a salvo de posibles vulnerabilidades, corregir cualquier defecto existente y mantenerse al día con las plataformas en evolución.</p>
+              <p>Con base en los comentarios de nuestros usuarios, planeamos proporcionar estas versiones con una frecuencia menor al ciclo de dos semanas de otras implementaciones de uso frecuente.</p>
+              <p>En cambio, nuestro objetivo es un ciclo de lanzamiento de 4-8 semanas, en el que esperamos incorporar mejoras de rendimiento sustanciales al tiempo de brindar paridad en backports importantes.</p>
+              <p>Una vez que nuestras campañas independientes de recaudación de fondos tengan éxito en la financiación ded desarrollo de nuevas funcionalidades, y algunos de esos desarrollos hayan completado su validación interna exitosa, nuestras versiones comenzarán a incluir esas nuevas funcionalidades. Siendo realistas, la finalización exitosa de esos eventos de recaudación de fondos aún está a 2-3 meses de distancia y la finalización de las nuevas funcionalidades todavía más, por lo que estamos analizando alrededor de Q3/Q4 para lanzamientos de funcionalidades.</p>
+            </li>
+            <li><p><strong>Nombramiento del representante de BCHN</strong></p>
+              <p>Este entregable consiste en la presentación de la persona designada como Representante de BCHN. El representante ayudará al responsable principal a garantizar que BCHN tenga un compromiso continuo, profesional y bidireccional con el ecosistema de usuarios. El representante trabajará junto con el responsable principal para desarrollar e implementar un proceso de obtención, procesamiento y presentación regular de comentarios de los usuarios.</p>
+            </li>
+            <li><p><strong>Mirror independente de descarga</strong></p>
+              <p>Anunciaremos la disponibilidad de nuestro propio host de lanzamiento a través de nuestro <a href="https://bitcoincashnode.org">sitio web</a> [1], de la documentación que acompaña cada actualización de producto y anuncios en read.cash.
+              Nuestro lanzamiento inicial [3] y lanzamientos menores existentes a esa fecha serán transferidos al mirror de descarga.</p>
+            </li>
+            <li><p><strong>Servicio de soporte via GitLab Issue tracker y Slack</strong></p>
+              <p>La propuesta financia nuestro continuo soporte del software de nodo mediante tiempo de desarrollo dedicado. Dicho soporte será brindado a través de GitLab y el canal #support en <a href="https://bitcoincash.slack.com">Bitcoin Cash Node Slack</a>.</p>
+            </li>
+            <li><p><strong>Disponibilidad de nuestro sitio web en otro idioma primario (Chino)</strong></p>
+              <p>Esto representa una traducción completa de nuestro sitio web, así como cualquier artículo relacionado, al idioma chino mandarín.</p>
+            </li>
+            <li><p><strong>Nuestra primera campaña crowdfunding para ítems técnicos</strong></p>
+              <p>Esto demostrará que tenemos una forma independiente para llevar a cabo nuestras propias campañas de recaudación de fondos, preferiblemente utilizando la tecnología de contratos de garantía como Flipstarter. Esto facilitará el camino para recaudaciones de fondos más detalladas y enfocadas.</p>
+              <p>Nuestra primera campaña técnica proporcionará un desglose detallado de las funcionalidades, sus costos y beneficios, estimaciones del trabajo involucrado, recursos necesarios y el calendario previsto para su implementación desde la especificación (si no se ha completado) hasta el lanzamiento.</p>
+            </li>
+            <li><p><strong>Especificación de finalización automática, parking y unparking</strong></p>
+              <p>Esto cierra una brecha en la especificación de las reglas de consenso y beneficia a toda la escena de clientes de nodo. Ofrece una especificación en forma de errata a la especificación de actualización de noviembre de 2018 fácil de integrar en las especificaciones compartidas del protocolo BCH.</p>
+              <p>Este es un trabajo de reglas de consenso sensible que también requiere de modelado y prueba en contraste con datos de prueba históricos así como sintéticos, comparándolos con nodos reales para verificar que la especificación resultante sea completamente precisa.</p>
+              <p>El modelo, las pruebas y cualquier dato necesario son partes del entregable.</p>
+            </li>
+          </ol>
+          <h2 id="5-detalles-de-alcance">5. Detalles de alcance</h2>
+          <p>Esta sección describe el alcance con mayor detalle y proporciona la base para estimar los presupuestos requeridos, que se resumen en [Presupuesto](# 6-presupuesto).</p>
+          <blockquote>
+            <p>NOTA: Para las estimaciones presupuestarias del trabajo de desarrollo y mantenimiento, se aplica una tarifa por hora de 100 USD para aquellas que involucran tareas de desarrollo general. Esto se basa en tarifas medias a superiores [3] para desarrolladores offshore en regiones como Asia oriental y meridional, Australia,y África. Estas tarifas pueden estar estar en la faja inferior para Europa occidental y US, pero en casos en donde sean necesarios conocimientos especificos pueden considerarse tarifas más altas.</p>
+          </blockquote>
+          <h3 id="51-mantenimiento-de-software-de-nodo">5.1 Mantenimiento de software de nodo</h3>
+          <p>El mantenimiento del software del nodo implica brindar soporte, corregir errores (incluso aquellos que aún no han tenido impacto en los usuarios, hacer backporting de soluciones que otros han detectado y realizado públicas) y asegurarse de que el software continúe corriendo en plataformas hardware y software en constante evolución.</p>
+          <p>También cubre la infraestructura que mantenemos para proporcionar las versiones (en Github, GitLab y a través de nuestros propios servidores de descarga una vez que los hayamos configurado).</p>
+          <p>Las actividades para garantizar la calidad del software también se incluyen en este ítem. El control de calidad se aborda principalmente a través de la verificación (revisión, prueba y análisis) que se realiza para encontrar defectos en el producto antes de que lo hagan nuestros usuarios.</p>
+          <p>Para dicho mantenimiento, contamos con el siguiente presupuesto:</p>
+          <ol>
+            <li><p><strong>Backporting de rutina de correcciones provenientes del upstream</strong></p>
+              <p>promedio de 20 horas de desarrollador por semana (medio tiempo equivalente). El proyecto puede contratar uno o más desarrolladores para obtener el tiempo necesario y sería presupuestado utilizando una tarifa de 100 USD / h para el costo total del ítem (durante 6 meses, es decir, 24 semanas) de 48 kUSD.</p>
+              <p>Los recursos del desarrollador que no sean utilizados en el backporting pueden ser relocados a discreción del proyecto en otras actividades de mantenimiento o desarrollo.</p>
+            </li>
+            <li><p><strong>Soporte técnico al usuario (GitLab issues)</strong></p>
+              <p>actualmente bajo, pero podría aumentar rápidamente a medida que nuestro software de nodo gane usuarios. Estimamos 20 horas de desarrollador por semana (medio tiempo equivalente) durante los próximos 6 meses. Como se indicó anteriormente, esto genera un presupuesto adicional de 48 kUSD durante los próximos 6 meses. También, los recursos del desarrollador que no sean utilizados para el soporte del usuario pueden ser relocados a discreción del proyecto en otras actividades de mantenimiento o desarrollo, según las necesidades.</p>
+            </li>
+            <li><p><strong>Cerrar la brecha referente a los "rolling checkpoints" de la especificación</strong>.</p>
+              <p>Esta es una brecha técnica correpondiente a la especificación de las reglas de consenso que afecta negativamente a todos los clientes que no heredan el código de ABC (ya que estas reglas actualmente solo están implementadas en el código, pero no están especificadas correctamente como parte del protocolo). Este es un trabajo de especificación sensible que también requiere modelado y prueba contrastada con datos de históricos y quizás adicionales, para verificar que la especificación resultante es precisa. Cometer un error en este punto podría tener un alto costo en otras implementaciones que podrían seguir esta especificación.</p>
+              <p>Se han realizado algunos trabajos de base, pero se estima que el trabajo restante sería de dos semanas FTE (80 horas) a 100 USD / hora u 8kUSD. Este trabajo debe ejecutarse de manera que permita una fácil integración en las especificaciones del protocolo BCH compartidas (<a href="https://reference.cash">https://reference.cash</a>). La especificación de protocolo común es bastante general en relación a la validación de bloques y puede ser difícil crear un contexto adecuado en este presupuesto, pero podría describirse como una errata a la actualización de noviembre de 2018 en 'Actualizaciones de red'.</p>
+            </li>
+            <li><p><strong>Actualizaciones de sitio web informativas</strong>.</p>
+              <p>Esto es parte de un mantenimiento de rutina, y tenemos la intencion de orientar nuestros esfuerzos a varias mejoras:</p>
+              <p><strong>Seccióm de publicaciones en nuestro sitio web</strong> en donde pensamos presentar novedades del proyecto, anuncios importantes y reportes técnicos y financieros.</p>
+              <p>Este es un ítem menor pero requiere de un mantenimiento regular a medida de que el proyecto publique sus artículos. Un presupuesto de 6 meses estimado se calcula en 4800 USD, en base a 8 horas / mes a 100 USD la hora.</p>
+              <p><strong>Internacionalización</strong>: soporte para traducciones a idiomas principales (comenzaremos con el idioma chino para acercarnos los usuarios de minería e sitios de cambio). Es vital para nuestro proyecto informar a una audiencia global sobre nuestros productos y servicios. Muchos usuarios de Bitcoin Cash son de países que no hablan inglés y nos gustaría llegar a ellos en la medida de las posibilidades.</p>
+              <p>Para comenzar, nos gustaría ofrecer nuestros artículos informativos en idioma chino, llegando a un mercado importante y a muchas partes interesadas en Bitcoin Cash. Este es un elemento importante para el sitio web, ya que requiere de una adaptación estructural y de una traducción profesional del contenido, así como una actualización periódica de todas las traducciones disponibles a medida que nuevos contenidos sean incorporados.</p>
+              <p>Una estimación de presupuesto para 6 meses se calcula sobre la siguiente base:</p>
+              <p>2000 USD por adaptar el sitio web para incorporar otros idiomas.
+                1000 USD para la traducción profesional de la estructura del sitio y el contenido general, excluyendo la extensión total de cualquier artículo, a un otro idioma principal y la adición de ese idioma al sitio web. Adicionalmente, alrededor de 100 USD para la traducción y revisión por cada informe completo publicado o artículo del inglés al otro idioma principal.
+                Calculamos en base a 4 de estos artículos por mes, por 400 USD / mes o 2400 USD durante 6 meses <em>por idioma</em>. Comenzaremos con un idioma (chino mandarín) por un monto total de 2000 + 1000 + 2400 = 5400 USD (durante 6 meses). En el futuro, solo nuevos contenidos y artículos generarán gastos, pero después de 6 meses de operación, deberíamos tener una buena indicación de cuáles son esos costos y podremos hacer una recaudación de fondos más específica para un mayor mantenimiento del sitio.</p>
+                <p><strong>Hosting para descargas BCHN propio</strong>, por lo menos como mirror. Estimando entre 6 y 12 lanzamientos por año, con actualmente ~1 GB de almacenamiento por lanzamiento, necesitamos un espacio de hosting de aproximadamente 20 GB para comenzar, y creciendo a medida que pase el tiempo. Servidores adecuados con 30 GB están disponibles a 10 USD / mes, con aproximadamente 10 USD / mes / 30 GB adicionales de almacenamiento). Presupuestamos 120 USD para el alquiler inicial de VPS durante un período de 12 meses, y 380 USD para el mantenimiento del servidor (incluyendo la configuración inicial y la administración del sistema) durante ese período. Total: 500 USD.</p>
+              </li>
+            </ol>
+            <h3 id="52-desarrollo-del-software-de-nodo">5.2 Desarrollo del software de nodo</h3>
+            <p>En esta propuesta, solo se incluye una acotada selección de nuevas funcionalidades a ser desarrolladas. Nos parece adecuado demostrar resultados primero antes de solictar más fondos. El desarrollo de nuevas funcionalidades será propuesto a través de recaudaciones de fondos específicas. Las mismas cubrirán la adecuada especificación, diseño, implementación, pruebas, cronogramas de implementación y métodos de activación.</p>
+            <p>Esta propuesta incluye los siguientes proyectos de desarrollo e investigación:</p>
+            <ol>
+              <li><p><strong>R&amp;D sobre DAA para diseñar y ofrecer un algoritmo de ajuste de dificultad de reemplazo</strong></p>
+                <p>Realizar una evaluación y publicar un informe al respecto, presentando al público los pros y los contras de los algoritmos evaluados. Se nominará un algoritmo de reemplazo. Esfuerzo y costo estimados: 40 horas a 100 USD / hora para un total de 4000 USD.</p>
+                <p>Especificar el algoritmo de reemplazo recomendado de una manera adecuada para su integración con las especificaciones de actualización de red y los repositorios de especificación del protocolo BCH comunes: 20 horas a 100 USD / hora por un total de 2000 USD.</p>
+                <p>Implementar el algoritmo de reemplazo recomendado en C++ con unit tests: 30 horas a 100 USD / hora por un total de 3000 USD.</p>
+                <p>Implementar la activación y cualquier otra sistema de test (convencionalmente en Python) para validar la activación de actualización del algoritmo: 20 horas a 100 USD / hora por un total de 2000 USD.</p>
+                <p>Empaquetar las diferentes partes del software (nuevo algoritmo, tests) en una versión de software de nodo: 10 horas a 100 USD / hora por un total de 1000 USD.</p>
+              </li>
+              <li><p><strong>R&amp;D para analizar los cuellos de botella en las cadenas de tx no confirmadas</strong></p>
+                <p>Construir benchmarks de software y usarlos para localizar cuellos de botella de rendimiento asociados al manejo de los nodos en relación largas cadenas de tx no confirmadas: 40 horas a 100 USD / hora por un total de 4000 USD.</p>
+                <p>Examinar las posibles soluciones a los cuellos de botella encontrados, realizar prototipos de mejoras simples en relación a los benchmarks y progamar soluciones más complejas como tareas adicionales (que probablemente necesiten de fondos adicionales): 40 horas a 100 USD / hora por un total de 4000 USD.</p>
+                <p>Publicar un reporte técnico sobre los resultados de referencia y otras recomendaciones: 10 horas a 100 USD / hora para un total de 1000 USD.</p>
+              </li>
+              <li><p><strong>R&amp;D para operaciones de numeros grandes (tentativamente: 64-bit) en script</strong></p>
+                <p>Revisar y completar el trabajo de especificación previa para operaciones de números de 64 bits: 100 horas a 100 USD / hora para un total de 10000 USD.</p>
+                <p>Implementar operaciones específicas y unit tests: 100 horas a 100 USD / hora por un total de 10000 USD.</p>
+                <p>Construcción del sistema de test (regtests): 24 horas a 100 USD / hora por un total de 2400 USD.</p>
+                <p>Integrar en una versión para pruebas de testnet: 8 horas a 100 USD / hora para un total de 800 USD.</p>
+                <p>Integrar para la actualización de mainnet (agregando tests de activación): 8 horas a 100 USD / hora para un total de 800 USD.</p>
+                <p>Publicar un informe técnico y proponer mayor investigación: 8 horas a 100 USD / hora por un total de 800 USD.</p>
+              </li>
+            </ol>
+            <h3 id="53-capacidad-de-autofinanciamiento">5.3 Capacidad de autofinanciamiento</h3>
+            <p>Dada la situación económica global y el carácter de todo-o-nada de esta recaudación de fondos inicial por parte de Flipstarter, no estamos incluyendo el desarrollo de muchas funcionalidades nuevas ("ítems llamativos") en esta propuesta.</p>
+            <p>Los contratos de garantía (las promesas son devueltas en caso de los objetivos de financiación no ser alcanzados) son un modelo de crowdfunding que ha demostrado ser exitoso en el conocido sitio Kickstarter.</p>
+            <p>Los comentarios que hemos recibido a la fecha indican que dividir futuros desarrollos en paquetes de financiación bien descritos y definidos, con sus planes particulares, presupuestos y cronogramas dedicados, es la forma de preferencia tanto por nuestros desarrolladores como por los contribuidores.</p>
+            <p>También creemos que a largo plazo es mejor un enfoque de financiación de este tipo, ya que mantiene la dirección del desarrollo de nuestro cliente firme en manos de sus usuarios, que podrán controlar la financiación en sus finos detalles.</p>
+            <p>Por lo tanto, proponemos el enfoque ágil de un desarrollo inicial limitado con campañas de crowdfunding adicionales. Estamos evaluando diversas opciones para trabajar con otras compañías que puedan estar interesadas en crear una plataforma de financiación Flipstarter de manera rentable. Una estimación inicial que hemos recibimos de una compañía potencialmente interesada en llevar tal desarrollo a la práctica es de 10kUSD.</p>
+            <p>Como tenemos algunas personas con experiencia en Flipstarter en nuestro equipo, podemos decidir configurar esto nosotros mismos de forma rápida (servidor de campaña simple basado en el sitio web inicial de Flipstarter) e interactuar con proveedores externos solo para una solución a largo plazo.</p>
+            <p>En el caso de que configuremos nuestro propio hosting Flipstarter, iremos a necesitar:</p>
+            <ol>
+              <li><p>Ingeniería de back-end y mejor hosting. Nuestro sitio web actual es estático, pero Flipstarter necesita de características dinámicas para que los usuarios puedan submitir sus promesas y poder interactuar con la red Bitcoin Cash mediante transacciones. Es probable que debamos correr las campañas Flipstarter en un servidos separado. Los comentarios que hemos recebido indican que debería ser sencillo de configurar, con minimas necesidades de hosting así como aprovechar el dominio existente. Se establece un presupuesto de 20 horas para la configuración e integración a 100 USD / hora y 120 USD para el hosting de servidores por un total de 2120 USD.</p>
+              </li>
+              <li><p>Desarrollo front-end. Las campañas ejecutadas por nosotros mismos requerirán de cierto trabajo de front-end para su adecuada presentación. Las diferentes campañas seguramente variarán en complejidad, desde simples a más elaboradas. En caso de desarrollar nuestro propio hosting de campaña, presupuestamos 20 horas para el desarrollo genérico de la campaña front-end a 100 USD / hora por un total de 2000 USD. Debemos anticipar costos menores y recurrentes en relación a la configuración y modificaciones de front-end o back-end necesarias para nuevas campañas. Asignamos un paquete de alrededor de 500 USD por campaña que cubre dicha configuración, así como la traducción del texto de la campaña al idioma chino.</p>
+              </li>
+            </ol>
+            <p>Vamos a presupuestar de antemano para la creación de 12 de estas campañas, por un total de front-end (2kUSD) + back-end (2.12kUSD) + campañas (12 x 500USD) = 10.12k USD.</p>
+            <p>En el positivo caso de recebir una oferta atractiva para gastar los fondos presupuestados en el desarrollo externo de la plataforma Flipstarter, procederemos a hacerlo. El beneficio de usar un servicio externo es que puede tener un menor impacto sobre nuestros escasos recursos de desarrollado. Si dicho proveedor externo gana tracción, podríamos beneficiarnos de una plataforma que con el tiempo se mejore a sí misma y se vuelve más fácil de usar. La desventaja, en ese caso, sería la dependencia de un proveedor de servicios para una actividad de recaudación de fondos relativamente crítica.</p>
+            <p>En caso de que los fondos presupuestados para esta actividad de autofinanciación no sean utilizados (por ejemplo, si lo hacemos nosotros mismos y resulta más simple de lo estimado, o si conseguimos obtener los mismos servicios de una forma más económica a través de otra plataforma), los fondos restantes se utilizaran para otras mejoras de nuestro sitio web.</p>
+            <p>Como principales candidatos para futuras funcionalidades, las que contarían con campañas de financiación independientes, tenemos:</p>
+            <ol>
+              <li><p><strong>Asegurar la conexión JSON RPC</strong></p>
+                <p>Esta es una tarea que está al alcance de la mano y sería de utilidad para proteger el tráfico RPC, incluyendo las credenciales de snooping, no solo en internet sino tambien en redes locales donde los nodos pueden estar corriendo detras de NAT. Optimización de la privacidad para los usuarios que ejecutan nodos BCHN para servir carteras light.</p>
+              </li>
+              <li><p><strong>Incremento de la compatibilidad RPC con otros nodos</strong> (p.e. la interface gRPC de BCHD).</p>
+                <p>Esto hace que el software BCHN sea más útil como una opción de redundancia para aquellos que ya ejecutan otros clientes, y proporciona una mejor plataforma para los usuarios en torno a APIs de calidad. En particular, gRPC es atractivo, y lo pensamos en combinación con el soporte QUIC como complemento.</p>
+              </li>
+              <li><p><strong>Pruebas de gasto doble y notificaciones</strong></p>
+                <p>Esto ofrece protección contra intentos fraudulentos de gasto doble y ayuda a proteger a comerciantes y negocios. Fortalece la utilidad de las transacciones no confirmadas como medio para recibir pagos ordinarios.</p>
+              </li>
+              <li><p><strong>Commitments UTXO/UtreeXO</strong></p>
+                <p>Permite que los nuevos nodos de red que se unen a la misma sincronicen mucho más rápido, comiencen a minar y exijan mucho menos ancho de banda de los nodos existentes, así como que proporcionen nuevas formas de servicio a las carteras light. Este es un hito importante en términos de escala masiva.</p>
+              </li>
+              <li><p><strong>Mejor propagación de bloques con Xthinner y/o Graphene compatibles</strong></p>
+                <p>Graphene y Xthinner son tecnologías de escala que ofrecen importantes economías de ancho de banda en el caso de bloques grandes. Si bien Graphene todavía está siendo optimizado para mejores tasas de retroceso, Xthinner ya está relativamente <a href="https://medium.com/@j_73307/benefits-of-ltor-in-block-entropy-encoding-or-8d5b77cc2ab0">bien definido</a> y se entiende que posee un diseño robusto, aunque ofrece una economía de ancho de banda más modesto en el mejor de los casos.
+                Evaluar e implementar uno o ambos son pasos importantes en el escalado masivo.</p>
+              </li>
+              <li><p><strong>Permitir el uso de todos los cores de procesamiento durante la validación de bloques</strong></p>
+                <p>Actualmente, el software no utiliza los cores de CPU tan eficientemente como debería. Muchas mejoras son posibles en esta área y son necesarias para una mayor escala, pero requiere un trabajo de ingeniería muy cuidadoso.</p>
+              </li>
+              <li><p><strong>Evaluación de las recomendaciones para el límite de tamaño de bloque adaptable con recomendaciones de nuevas reglas de consenso y una implementación de referencia</strong></p>
+                <p>La eliminación del límite fijo de tamaño de bloque reduce un posible obstáculo futuro y un elemento recurrente que impulsaría la necesidad de bifurcar la red en el caso de una adopción mayor.</p>
+              </li>
+              <li><p><strong>Evaluar Storm o Avalanche como una opción de pre-consenso</strong></p>
+                <p>Estos protocolos podrían ser utilizados como pre-consenso para permitir que la red se establezca rápidamente en una de varias alternativas de transacciones no confirmadas. Esto podría proteger la red contra gastos dobles fraudulentos y brindar una confirmación previa más rápida de transacciones, fortaleciendo la utilidad de BCH como dinero electrónico. Mientras que <a href="https://github.com/tyler-smith/snowglobe">Avalanche</a> y <a href="https://github.com/awemany/storm-sim/raw/master/whitepaper/storm-wp-2019-08-30.pdf">Storm</a> han progresado en la descripción e implementación en ambientes seguros, tambien es cierto que las proximas etapas consideradas requerirán mucho más trabajo.</p>
+              </li>
+            </ol>
+            <h3 id="54-configuración-y-operación-de-dos-redes-de-test">5.4 Configuración y operación de dos redes de test</h3>
+            <p>BCHN proporcionará una red de prueba estable (testnet3) donde los servicios puedan ser proporcionados como se describe anteriormente, y una red experimental y volátil en la que se puedan probar nuevas funcionalidades. Esperamos que el costo incurrido incluya configuraciones de minería redundantes, nodos que brinden versiones actualizadas de varios servicios para desarrolladores y personal para mantener las documentaciones actualizadas.</p>
+            <h3 id="55-representante-bchn-para-el-relacionamiento-con-usuarios">5.5 Representante BCHN para el relacionamiento con usuarios</h3>
+            <p>El responsable principal mantendrá una relación natural con los usuarios clave, pero deberá centrarse en la toma de decisiones y garantizar que BCHN mantenga los más altos estándares de calidad.</p>
+            <p>El representante será el punto de contacto principal para BCHN y se asegurará de que el proyecto tenga un compromiso continuo, profesional y bidireccional con el más amplio ecosistema de usuarios.</p>
+            <p>El rol será a tiempo parcial de aproximadamente 12.5 horas / semana, pagado en BCH. Inicialmente, se busca un presupuesto de 30,000 USD destinado a esta posición para cubrir un período variable que dependerá de la compensación del solicitante considerado.</p>
+            <h2 id="6-presupuesto">6. Presupuesto</h2>
+            <p>Items precios asociados en USD.</p>
+            <ol>
+              <li><p><strong>Autofinanciación (más campañas de crowdfunding): 10120 USD</strong></p>
+                <p>Se necesita: 0,5 FTE hasta julio, menos después. Podemos llevar esto a la práctica utilizando los miembros del equipo existentes (desarrollador web + ingeniero de protocolo experimentado para back-end), o podemos optar por usar un proveedor de plataforma externo.</p>
+              </li>
+              <li><p><strong>Mantenimiento / backporting: 48000 USD</strong></p>
+                <p>Se necesita: 0,5 FTE. Tenemos varios desarrolladores que podrían realizar esta tarea. Por razones logísticas, podríamos compartirlo entre estos desarrolladores o contratar más recursos de desarrollo con estos fondos.</p>
+              </li>
+              <li><p><strong>Mantenimiento / soporte de usuario: 48000 USD</strong></p>
+                <p>Se necesita: 0,5 FTE. Tenemos la intención de contratar desarrolladores que ya apoyan al equipo.</p>
+              </li>
+              <li><p><strong>Mantenimiento / Rolling checkpoints spec: 8000 USD</strong></p>
+                <p>Se necesita: 0,25 FTE durante 8 semanas desde mayo hasta mediados de julio. El responsable principal ejecutará este ítem.</p>
+              </li>
+              <li><p><strong>Maintenance / sitio web: 10700 USD</strong></p>
+                <p>Se necesita: 0.25-0.5 FTE de desarrollo web. El responsable principal ha confirmado un contribuyente que podría realizar el trabajo en un plazo adecuado (entregas incrementales desde mayo hasta mediados de agosto).</p>
+              </li>
+              <li><p><strong>Desarrollo / DAA R&amp;D: 12000 USD</strong></p>
+                <p>Se necesita: 1 FTE durante 12 semanas desde mayo hasta principios de agosto.</p>
+              </li>
+              <li><p><strong>Desarrollo / Perf. de tx  no conf. R&amp;D: 9000 USD</strong></p>
+                <p>Se necesita: 0.9 FTE durante 10 semanas desde mediados de agosto hasta finales de octubre. Postergado para permitir priorizar DAA y el trabajo de operaciones de 64 bits, pero puede ser relocado en caso de obtener donaciones adicionales fuera de esta recaudación de fondos que permita contratar a otro desarrollador experimentado.</p>
+              </li>
+              <li><p><strong>Desarrollo / 64-bit ops: 24800 USD</strong></p>
+                <p>Se necesita: 2 FTE durante 12 semanas desde mayo hasta principios de agosto. Aunque nuestro equipo incluye desarrolladores con la experiencia necesaria, es posible que necesitemos obtener recursos adicionales debido a la extensión y la importancia del trabajo así como el estricto intervalo de tiempo en el que este subproyecto tiene que ser encajado.</p>
+              </li>
+              <li><p><strong>Infraestructura de testnet / Configuración y operación: 20000 USD</strong></p>
+                <p>Se necesita: más gastos de infraestructura que mano de obra (estimado &lt;0.25 FTE). La finalización de este ítem será administrada (hasta principios de noviembre) por un contribuyente fundador de BCHN con experiencia en la ejecución de otros servicios de infraestructura de Bitcoin Cash.</p>
+              </li>
+              <li><p><strong>Procesos / compensación del rol de enlace con el ecosistema: 30000 USD</strong></p>
+                <p>Se necesita: una persona. El proyecto tiene la intención de contratar una persona para este rol. Los fondos disponibles son fijos y la duración depende del contrato, que aún debe resolverse.</p>
+              </li>
+              <li><p><strong>20% de buffer por volatilidad de BCH: 44,124 USD</strong></p>
+              </li>
+            </ol>
+            <p>Cantidad total a recaudar sin considerar los fondos ya existentes:</p>
+            <p>264,744 USD (= ~ 1122 BCH al momento de escribir 236 USD / BCH)</p>
+            <h3 id="uso-de-fondos-ya-donados-en-esta-campaña">Uso de fondos ya donados en esta campaña</h3>
+            <p>Como ya hemos indicado en nuestro sitio web:</p>
+            <blockquote>
+              <p>En la próxima recaudación de fondos, cualquier fondo no utilizado será destinado a contribuir al cumplimiento de esa campaña.</p>
+            </blockquote>
+            <p>Restamos nuestros fondos ya donados (actualmente, redondeados al número entero más cercano: 144 BCH) del monto BCH anterior para obtener nuestro objetivo para la campaña Flipstarter:</p>
+            <p>1122 BCH - 144 BCH = 978 BCH (nuesto objetivo de financiación en Flipstarter)</p>
+            <h2 id="7-cronograma">7. Cronograma</h2>
+            <ol>
+              <li><p><strong>Primera semana de abril - primera semana de mayo</strong>:</p>
+                <p>Tiempo aproximado de esta recaudación de fondos inicial. Una versión de actualización menor de BCHN (correcciones de errores, mejoras de documentación, optimizaciones de rendimiento) antes de la actualización de mayo. Otros recursos relacionados:</p>
+                <ul>
+                  <li>Comenzar a diseñar e implementar los trabajos de back-end y front-end autofinanciados. Esta es una actividad larga, por lo que debe comenzar lo antes posible. Esta actividad se lleva a cabo utilizando fondos de proyectos existentes, ya sea que la campaña de nodo Flipstarter tenga éxito o falle.</li>
+                  <li>Backporting y otros mantenimientos continuos/soporte al usuario.</li>
+                  <li>Tests de activación de BCHN junto con usuarios de BCHN (aproximadamente hasta finales de abril).</li>
+                  <li>Preparación para el switchover de usuario e instrucciones de respaldo (ABC &lt;=&gt; BCHN).</li>
+                  <li>Planificación e informes del proyecto (por ejemplo, comentarios de usuarios ya recibidos, para dar forma a futuras campañas para características técnicas).</li>
+                  <li>Nombramiento del rol de representante de BCHN si fuese posible, de lo contrario esto será postergado.</li>
+                  <li>Mediados y finales de abril: se inicia el trabajo preliminar sobre rolling checkpoints spec.</li>
+                </ul>
+              </li>
+              <li><p><strong>Segunda semana de mayo</strong>:</p>
+                <p>Se espera que el resultado de la recaudación de fondos sea de público conocimiento. Se procederá según lo planeado o se revertirá a planes de respaldo de menor financiamiento para mantenimiento y desarrollo. La capacidad para realizar campañas de recaudación de fondos propias continuara desarrollándose de forma independiente, utilizando los fondos existentes. El mantenimiento del nodo continuara de forma independiente, pero de manera más limitada (consulte la sección a continuación sobre 'Planes de respaldo').</p>
+                <ul>
+                  <li>Comenzar la evaluación del DAA.</li>
+                  <li>Comenzar la actualización de operaciones de 64 bits.</li>
+                </ul>
+              </li>
+              <li><p><strong>14-16 de mayo</strong>:</p>
+                <p>Actualización de red BCH. Todos los recursos se desviarán para centrarse en proporcionar soporte a los usuarios de BCHN para una actualización sin problemas en sus sistemas. Solicitamos amablemente a los usuarios que nos notifiquen con anticipación sobre cualquier necesidad especial relacionada con este evento.</p>
+              </li>
+            </ol>
+            <h3 id="cronograma-posterior-a-la-actualización-de-mayo-suponiendo-que-la-recaudación-de-fondos-sea-exitosa">Cronograma posterior a la actualización de mayo (suponiendo que la recaudación de fondos sea exitosa)</h3>
+            <p><strong>Resto de mayo, y mayor parte de junio</strong>: actividades en paralelo de</p>
+            <ul>
+              <li>desarrollos de autofinanciamiento.</li>
+              <li>mejora del sitio web: la sección de publicaciones será implementada en mayo/junio.</li>
+              <li>planificación de la configuración de testnets.</li>
+              <li>actividades continuas de mantenimiento de nodo.</li>
+            </ul>
+            <p>La planificación y preparación para la(s) primera(s) campaña(s) de propuestas técnicas también se realizará durante mayo/junio, en previsión de que la capacidad de recaudación de fondos esté lista en julio.</p>
+            <p><strong>Julio</strong>:</p>
+            <ul>
+              <li><p>En algún momento de este mes <em>a más tardar</em>, se debería implementar nuestra propia capacidad de crowdfunding y lanzar nuestras primeras campañas de funcionalidades, con tiempos de ejecución de entre 1 a 4 semanas (a ser decidido, probablemente también variable).</p>
+              </li>
+              <li><p>El mantenimiento y la mejora del nodo continuarán con un lanzamiento menor por mes durante el resto del período de 6 meses hasta finales de octubre.</p>
+              </li>
+              <li><p>Publicaremos nuestra actualización de script y las especificaciones DAA e informes técnicos relacionados, incluyendo las especificaciones completas y las implementaciones probadas para estas características. Participaremos en discusiones y revisión/desarrollo/pruebas para el congelamiento de características del 15 de agosto para la actualización de noviembre.</p>
+              </li>
+              <li><p>El entregable de los  rolling checkpoints (actualizaciones de especificación, modelo de validación + datos) debe publicarse a principios de julio, a más tardar el 15 de agosto.</p>
+              </li>
+            </ul>
+            <p><strong>15 de agosto</strong>:
+            Feature freeze para la actualización de noviembre de 2020. Comenzaremos a implementar los cambios de consenso acordados en BCHN con miras a tener una versión de prueba disponible 1 mes después (15 de septiembre).</p>
+            <ul>
+              <li>se lanza la construcción del benchmark de la longitud de la cadena de tx no confimadas.</li>
+              <li>casi al mismo tiempo, se debe implementar la primera versión internacionalizada del sitio web (en idioma chino), marcando el final del trabajo general de desarrollo del sitio web hasta nuevo aviso.</li>
+            </ul>
+            <p><strong>Julio hasta el final de octubre</strong>:</p>
+            <p>Trabajo en la entrega de las primeras funcionalidades técnicas (si los eventos para recaudar fondos han tenido éxito); de lo contrario, nos concentraremos en el mantenimiento y analizar el motivo de por qué las recaudaciones no tuvieron éxito; puede ser que las prioridades de los financiadores hayan cambiado y necesitemos ajustar nuestra hoja de ruta/funcionalidades propuestas. Será un momento de recopilación de comentarios, establecimiento y ajuste de nuestros procesos no solo en torno a la recaudación de fondos, sino también en relación a la planificación y entrega del trabajo que ha sido financiado por el público.</p>
+            <p><strong>Mitad al final de octubre</strong>:</p>
+            <p>Se publicará el informe final sobre las cadenas de tx no confirmadas. Haremos un balance de nuestra situación (tanto financiera como del progreso del trabajo). Comunicaremos los resultados de los primeros 6 meses y planificaremos los próximos 6 meses.</p>
+            <h3 id="cronograma-posterior-a-la-actualización-de-mayo-en-caso-de-que-la-recaudación-de-fondos-no-sea-exitosa">Cronograma posterior a la actualización de mayo (en caso de que la recaudación de fondos no sea exitosa)</h3>
+            <p>Retornaremos a un modo de operación mas voluntario y con menos certidumbre, pero continuaremos recaudando fondos y trabajando por nuestros objetivos generales.</p>
+            <h2 id="8-políticas--procesos--cultura">8. Políticas / procesos / cultura</h2>
+            <p>Bitcoin Cash Node se enorgullece de seguir procesos abiertos y transparentes que toman los comentarios del ecosistema de forma explícita como un ingrediente clave.</p>
+            <p>Consideramos que el grupo de partes interesadas de Bitcoin Cash es amplio y no deseamos servir los intereses de solo un subconjunto particular. Nuestro software está diseñado para ser usado en entornos de misión crítica que requieran alta confiabilidad y calidad. Esto requiere un enfoque de ingeniería sólido y políticas claras que buscamos abordar en la documentación de nuestro proyecto. Con este fin, hemos comenzado a configurar un repositorio de gestión de proyectos en el que depositaremos planes detallados que cubran el ciclo de vida de nuestro proyecto y sus productos.</p>
+            <p>A través de nuestros canales de comunicación, buscamos promover un entorno acogedor para todos los usuarios, independientemente de sus antecedentes o nivel de experiencia.</p>
+            <p>Mantendremos relaciones de divulgación mutua con otros proyectos de software que practican la divulgación responsable de eventuales problemas de seguridad, para que el ecosistema pueda beneficiarse en lugar de verse perjudicado.</p>
+            <p>Bitcoin Cash Node se compromete a desarrollar procesos transparentes y responsables tanto a nivel de su propio proyecto como a nivel del ecosistema BCH.</p>
+            <p>El ciclo de actualización de red de 6 meses y los ciclos de lanzamiento de cliente rápidos se han identificado como subóptimos, lo que causa centralización del desarrollo y problemas prácticos incluso para sus más firmes partidarios.</p>
+            <p>En consulta con los usuarios, BCHN se comprometerá a una adaptación bien considerada del ciclo de actualización después de noviembre de 2020 (la actualización de noviembre ya está codificada en el software actual en términos de algunos parámetros y no puede simplemente abandonarse).</p>
+            <h2 id="9-responsabilidad">9. Responsabilidad</h2>
+            <ol>
+              <li><p>Métricas para medir entregables individuales</p>
+                <p>Estos se describen en la sección de entregables anterior. Los informes del responsable tendrán como objetivo dar una idea del porcentaje de finalización de los entregables y los recursos utilizados hasta una fecha de informe determinada.</p>
+                <p>El proyecto agradece consultas y comentarios sobre métricas útiles que sus usuarios deseen ver con respecto a los entregables individuales.</p>
+              </li>
+              <li><p>Transparencia contable y método de verificación</p>
+                <p>A la fecha, el proyecto informa sobre ingresos y egresos contables en los informes disponibilizados por responsable principal [7, 8], pero a medida que aumente el número y la cantidad de gastos, esto se dividirá en un informe financiero separado publicado por la cuenta del proyecto en <a href="https://read.cash@bitcoincashnode">https://read.cash@bitcoincashnode</a> o en su sitio web.</p>
+                <p>En situaciones en que los gastos del proyecto deban pagarse en moneda fiat, estos serán en general asumidos por los miembros del proyecto y serán reembolsados en BCH desde la cartera de donaciones del proyecto.</p>
+                <p>Los informes financieros incluirán direcciones adicionales en caso de ser utilizadas para actividades específicas (como fondos de donación separados, destinados a funciones o actividades específicas), así como otros posibles flujos de ingresos en caso de ser recibidos.</p>
+                <p>La volatilidad del mercado <em>puede</em> requerir que el proyecto estabilice parte de sus fondos donados mediante el uso de stable coins para proteger su valor. El proyecto consultará internamente, pero se considera apropiado que, si esta acción llegase a ser puesta en práctica, debería utilizarse stable coins que sean tokens operando en la red Bitcoin Cash como por ejemplo SLP. Esto mantendrá los incentivos alineados con la red Bitcoin Cash.</p>
+              </li>
+              <li><p>Comunicaciones regulares en relación al progreso.</p>
+                <p>El responsable principal del proyecto se compromete a realizar informes periódicos (no menos frecuente que una vez al mes, preferiblemente cada dos semanas) en relación a las actividades actuales del proyecto y su progreso. La misma persona estará disponible para consultas públicas mediante cualquiera de lso canales de comunicación del proyecto.</p>
+              </li>
+            </ol>
+            <h2 id="10-planes-de-respaldo">10. Planes de respaldo</h2>
+            <p>Por favor, dirigirse a la sección de Preguntas Frecuentes (FAQ)</p>
+            <h2 id="11-apéndices">11. Apéndices</h2>
+            <h3 id="a-histórico-del-equipo-personas">A) Histórico del equipo, personas</h3>
+            <p>El equipo de Bitcoin Cash Node está compuesto por personas de diversos antecedentes en Bitcoin, incluyendo desarrolladores de mucha experiencia, tanto en desarrollo de protocolo como en servicios de capas como aplicaciones de infraestructura, carteras, smart contracts y servicios basados en tokens.</p>
+            <p>Algunos de sus miembros fueron actores fundamentales en la creación de Bitcoin Cash en 2017.</p>
+            <p>Para más informaciones sobre el equipo y nuestros colaboradores, visita el <a href="https://bitcoincashnode.org/team">sitio web</a> de Bitcoin Cash Node y la lista de <a href="https://read.cash/@freetrader/signatures-in-support-of-bitcoin-cash-node-43e323e9">partidarios que proporcionaron firmas</a>.</p>
+            <h3 id="b-histórico-de-logros">B) Histórico de logros</h3>
+            <p>El proyecto BCHN lanzó su primera versión el 27 de febrero de 2020, la que recibió una respuesta positiva por parte del ecosistema, incluyendo la adopción inmediata por parte de algunos pools de minería y otras empresas de Bitcoin Cash.</p>
+            <p>La versión inicial se creó por la necesidad de proporcionar una alternativa segura a Bitcoin ABC para la actualización de red del 15 de mayo de 2020. Se está utilizando para minar bloques en la red Bitcoin Cash, con señalización on-chain de su software por grupos que incluyen Bitcoin.com.</p>
+            <p>Durante las últimas dos semanas de marzo, el proyecto BCHN ha llevado a cabo una consulta pública para recopilar las opiniones del ecosistema Bitcoin Cash sobre las prioridades para el desarrollo del cliente y la red monetaria.</p>
+            <p>Esta encuesta marca el comienzo de un proceso abierto de interacción con el ecosistema de la moneda para guiar la evolución del software del proyecto y sus procesos de desarrollo, implementación y gobierno.</p>
+            <h3 id="c-histórico-de-presupuestos-y-disposición-de-fondos">C) Histórico de presupuestos y disposición de fondos</h3>
+            <p>El proyecto BCHN actualmente opera solamente con fondos BCH donados, los que se mantienen en una dirección multisig en bitcoincash:prnc2exht3zxlrqqcat690tc85cvfuypngh7szx6mk.</p>
+            <p>Esta dirección puede ser verificada en el <a href="https://bitcoincashnode.org/#donate">sitio web</a> del proyecto.</p>
+            <p>El proyecto ha recibido una donación de 100 BCH de una compañía que se especializa en el manejo y monitoreo de equipos de minería SHA256, y más donaciones de ~43.23 BCH de todo el ecosistema. Alrededor de 1.13 BCH fueron recolectados en coin.dance (<a href="https://cash.coin.dance/development/#developersupport">https://cash.coin.dance/development/#developersupport</a>) los que fueron transferidos a la dirección de donación de BCHN.</p>
+            <p>La situación financiera del proyecto hasta ahora ha sido publicada por el responsable principal en informes regulares [7,8]. Solo se ha incurrido en unos pocos gastos menores para las traducciones de artículos que ascienden a menos de 0.3 BCH. Todos los ingresos y gastos son públicamente visibles en el blockchain a través de la dirección de la cartera del proyecto.</p>
+            <p>Los fondos del proyecto al 4 de abril de 2020 suman ~144 BCH.</p>
+            <h3 id="d-gastos-operativos-actuales">D) Gastos operativos actuales</h3>
+            <p>El proyecto actualmente no posee grandes gastos operativos. Está utilizando planes gratuitos en varias plataformas conocidas en relación a:</p>
+            <ol>
+              <li><p>El control de versiones, la integración continua y las funciones de seguimiento de errores se realizan mediante el plan gratuito de gitlab.com.</p>
+              </li>
+              <li><p>Las principales comunicaciones de desarrollo se realizan a través Slack (plan gratuito) (bitcoincashnode.slack.com) y Telegram.</p>
+              </li>
+            </ol>
+            <p>Adicionalmente, se están contratando servicios de traducción ocasionales, para los cuales el proyecto reembolsa a los contribuyentes de sus fondos donados.</p>
+            <p>El registro del dominio del sitio web (<a href="https://bitcoincashnode.org">https://bitcoincashnode.org</a>) y el alojamiento del sitio actualmente son donados por colaboradores del proyecto. El proyecto podría reembolsar estos gastos privados y espera hacerlo en el futuro.</p>
+            <p>El dominio del sitio está en control de un colaborador que no es el responsable principal.</p>
+            <h3 id="e-faq">E) FAQ</h3>
+            <ol>
+              <li><p><strong>¿Qué pasa si la recaudación de fondos no alcanza el objetivo?</strong></p>
+                <p>En ese caso Bitcoin Cash Node solicita a todos aquellos interesados a donar directamente a su direccion multisig para donaciones.</p>
+                <p>En el caso de no poder alcanzar la meta de esta campaña, procederemos de la siguiente manera:</p>
+                <ul>
+                  <li>Mantendremos el nodo durante el próximo año versus <em>financiar</em> nuevos desarrollos importantes. En gran medida tendremos que depender de la contribución de mano de obra voluntaria para esos esfuerzos. No significa que abandonaremos los desarrollos de nuevas funcionalidades, solo que no podremos pagar por desarrolladores dedicados para que trabajen en ellas y deberemos confiar en los esfuerzos voluntarios. Por supuesto, eso también significa que los plazos de implementación y despliegue para tales funcionalidades se volverán más impredecibles e inciertas, ya que no podemos predecir si los recursos de desarrollo voluntario se materializarán, en qué plazo y en qué cantidad.</li>
+                  <li>La configuración de nuestro sitio web para recaudar fondos por nuestra cuenta seguirá siendo una prioridad, y si los fondos existentes siguen siendo suficientes (es necesario tener en cuenta la volatilidad del mercado), los usaremos para alcanzar la capacidad de crowdfunding. Si los fondos existentes se consideran inadecuados, es posible que tengamos que conformarnos con la recaudación de fondos que no esté basada en contratos de garantía, sino en direcciones de donaciones dedicadas por funcionalidad o paquete de trabajo.</li>
+                  <li>Buscar fuentes de financiación adicionales, como patrocinios de empresas, firmar acuerdos de soporte, proporcionar servicios de consulta para empresas que deseen utilizar BCHN, invitar a terceros a realizar recompensas por funcionalidades o vender sombreros :-)</li>
+                </ul>
+              </li>
+              <li><p><strong>¿Existe alguna entidad legal o compañía asociada a BCHN?</strong></p>
+                <p>No vemos una necesidad inmediata para ello, pero continuaremos evaluando esta opción a medida que la organización crezca.</p>
+              </li>
+              <li><p><strong>¿Dónde guardan sus fondos?</strong></p>
+                <p>Los fondos de los recaudaciones como estas se acumularán luego de su recolección en la cartera principal multisig del proyecto, donde el saldo total de fondos y cualquier movimiento son visibles públicamente.</p>
+              </li>
+              <li><p><strong>¿Podremos ver cómo son gastados?</strong></p>
+                <p>Pretendemos continuar publicando los reportes financieros que muestran el detalle de como los fondos son gastados.</p>
+              </li>
+              <li><p><strong>¿Las recaudaciones de fondos futuras que fueron detalladas irán a la misma cuenta o a cuentas separadas y asignadas?</strong></p>
+                <p>Para simplificar nuestro procesamiento de pagos, tenemos la intención de transferir todos los fondos recaudados a nuestra cartera principal multisig de donaciones. Podemos contabilizar fácilmente todos los pagos salientes y los montos obtenidos mediante recaudaciones de fondos u otros ingresos generados por nuestras actividades, y el público en general podrá monitorear fácilmente nuestro nivel de financiación, ingresos y gastos.</p>
+              </li>
+              <li><p><strong>Algunos de su equipo son miembros de otros proyectos de cliente y organizaciones. ¿Existe algún conflicto en eso?</strong></p>
+                <p>Bitcoin Cash Node es un proyecto open source que acepta contribuciones de cualquier persona, incluidos aquellos que trabajan en otros proyectos de cliente o incluso otras criptomonedas.</p>
+                <p>Vemos las consideraciones de conflictos de intereses como una responsabilidad ética personal [10] y alentamos a nuestros contribuidores a considerar la divulgación voluntaria de posibles conflictos que puedan tener.</p>
+              </li>
+              <li><p><strong>¿Qué sucede si las personas que tienen la intención de trabajar en los ítems no los completan a tiempo o deciden irse?</strong></p>
+                <p>Diferentes circunstancias pueden surgir en el camino para cumplir nuestra promesa de entregables. Si bien haremos nuestro mejor esfuerzo para enfrentar situaciones desafortunadas, tengamos éxito o no, documentaremos nuestros esfuerzos de manera transparente para que quede claro dónde se ha puesto el dinero recibido.</p>
+              </li>
+              <li><p><strong>¿Qué pasa si el precio de BCH cae por debajo del 20% del búfer de protección?</strong></p>
+                <p>En el caso de una caída de corto plazo, continuaremos trabajando de acuerdo con nuestro plan, solo que nuestras reservas serán agotadas más rápido, lo que significa que deberemos buscar como obtener fondos adicionales para compensar el déficit y llevar a cabo los entregables.</p>
+              </li>
+              <li><p><strong>¿Qué pasa si el precio del BCH aumenta significativamente? ¿Qué harán con el dinero?</strong></p>
+                <p>Cuanto más valor tengan nuestros fondos, más podremos lograr con ellos sin tener que recaudar nuevamente. En otras palabras, utilizaremos el dinero para llevar a cabo el desarrollo necesario en nuestro camino hacia el dinero electrónico par-a-par global.</p>
+              </li>
+              <li><p><strong>¿Mantendrán todos los fondos recaudados en BCH o mantendrán algunos una parte en stable coins?</strong></p>
+                <p>Esto no ha sido totalmente definido, pero tenemos la intención de mantener la mayoría de nuestros fondos (inicialmente: todos) en BCH. Estamos consultando asesores financieros sobre la posible cobertura de algunos fondos en stable coins que operen en la red BCH.</p>
+              </li>
+              <li><p><strong>¿Qué sucede si el IFP, contra toda expectativa, es activado?</strong></p>
+                <p>En ese caso, el software BCHN seguirá la cadena con mayor prueba-de-trabajo. Dado que no implementa las reglas del IFP, los mineros/pools deberían tomar nota del posicionamiento del ecosistema y decidir por sí mismos si cumplen con las reglas del IFP en caso de que sean activadas, ya que la activación entre nodos ABC no equivale a la adopción real.</p>
+              </li>
+              <li><p><strong>¿Cómo puedo ayudar a su proyecto de otra manera que no sea donar dinero?</strong></p>
+                <p>Estamos muy agradecidos por cualquier forma de ayuda y colaboración, ya sea un poco de su tiempo o un buen consejo o demostración de apoyo.</p>
+                <p>Si eres es un desarrollador, un tester de software o puedes realizar una redacción o revisión técnica, puedes ayudarnos trabajando directamente con nosotros en una o más de las áreas que te resulten de interés.</p>
+                <p>Si eres un productor de bloques Bitcoin Cash, puedes indicar tu apoyo incluyendo <code>/BCHN/</code> en tus tx basemoneda.</p>
+                <p>Si eres un negocio minorista que usa Bitcoin Cash y corres un nodo de red, esperamos que pruebes nuestro software y nos envíes tus comentarios.</p>
+                <p>Si eres un usuario de Bitcoin Cash en general, puedes reportar problemas o presentar solicitudes de mejoras a través de GitLab, o a través de cualquiera de los otros canales disponibles.</p>
+                <p>Por favor, ponte en contacto con nosotros por Slack, Telegram o IRC usando los links disponibles en nuestro sitio web para obtener mayor información.</p>
+              </li>
+            </ol>
+            <h3 id="f-referencias">F) Referencias</h3>
+            <ul>
+              <li>[1] <a href="https://bitcoincashnode.org">Sitio web de Bitcoin Cash Node</a></li>
+              <li>[2] <a href="https://read.cash/@freetrader/bitcoin-cash-node-003b2381">Pre-Anuncio de Bitcoin Cash Node</a></li>
+              <li>[3] <a href="https://github.com/bitcoin-cash-node/bitcoin-cash-node/releases/tag/v0.21.0">Release inicial de Bitcoin Cash Node</a></li>
+              <li>[4] <a href="https://read.cash/@freetrader/signatures-in-support-of-bitcoin-cash-node-43e323e9">Firmas en soporte a Bitcoin Cash Node</a></li>
+              <li>[5] <a href="https://read.cash/@bitcoincashnode/bitcoin-cash-node-2020-plans-for-may-upgrade-and-beyond-11af0b52">Bitcoin Cash Node 2020: plans for May upgrade and beyond</a></li>
+              <li>[6] <a href="https://read.cash/@freetrader/bitcoin-cash-node-community-survey-march-2020-c23eb5a8">Survey a la comunidad Bitcoin Cash Node March 2020</a></li>
+              <li>[7] <a href="https://read.cash/@freetrader/bchn-lead-maintainer-report-2020-03-14-84f2992d">BCHN Responsable Principal Reporte 2020-03-14</a></li>
+              <li>[8] <a href="https://read.cash/@freetrader/bchn-lead-maintainer-report-2020-03-31-1e0a4c39">BCHN Responsable Principal Reporte 2020-03-31</a></li>
+              <li>[9] <a href="https://qubit-labs.com/average-hourly-rates-offshore-development-services-software-development-costs-guide/">https://qubit-labs.com/average-hourly-rates-offshore-development-services-software-development-costs-guide/</a></li>
+              <li>[10] <a href="https://en.wikipedia.org/wiki/Conflict_of_interest">https://en.wikipedia.org/wiki/Conflict_of_interest</a></li>
+            </ul>
+          </section>
+        </article>
+
+        <!-- Campaign sidebar -->
+        <aside class="col s12 m12 l4">
+          <section>
+            <h3 style="float: left;">
+              <span class="valign-wrapper" style="float: left;">
+                <i class="icon-face"></i>
+                <b id="campaignRecipientCount">1</b>
+                <span data-string="recipientsLabel">destinatarios</span>
+              </span>
+            </h3>
+            <hr>
+            <ul id="recipientList" class="row" style="margin-bottom: 3rem;"><li class="col s6 m6 l12">
+              <a href="https://bitcoincashnode.org/">
+                <img src="https://bchn.flipstarter.cash/img/bchn-logo.png" alt="Bitcoin Cash Node (BCHN)">
+                <span>
+                  <b>Bitcoin Cash Node (BCHN)</b>
+                  <i>978 BCH</i>
+                </span>
+              </a>
+            </li><li class="col s6 m6 l12">
+              <a href="https://bitcoincashnode.org/">
+                <img src="https://bchn.flipstarter.cash/img/bchn-logo.png" alt="Bitcoin Cash Node (BCHN)">
+                <span>
+                  <b>Bitcoin Cash Node (BCHN)</b>
+                  <i>978 BCH</i>
+                </span>
+              </a>
+            </li></ul>
+          </section>
+
+          <section>
+            <h3 style="float: left;">
+              <span class="valign-wrapper" style="float: left;">
+                <i class="icon-favorite_border"></i>
+                <b id="campaignContributorCount">46</b>
+                <span data-string="contributorsLabel">contribuidores</span>
+              </span>
+            </h3>
+            <hr>
+            <ul id="contributionList"><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -4.35s; background-position: 0px 2.27rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">38%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">SLP Foundation</b>
+                  <small class="contributionAmount">371.37 BCH</small>
+                </span>
+                <q class="contributionComment" style="display: none;"></q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -11.47s; background-position: 0px 3.06rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">15%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">Marc De Mesel</b>
+                  <small class="contributionAmount">151.33 BCH</small>
+                </span>
+                <q class="contributionComment">Thanks for keeping Bitcoin Cash sound money that is permissionless, decentralized, non inflationary &amp;amp; voluntary</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -11.76s; background-position: 0px 3.24rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">10%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">Thomas J</b>
+                  <small class="contributionAmount">100.50 BCH</small>
+                </span>
+                <q class="contributionComment">He has made Miners dependent on his Will alone for the tenure of their offices +the amount and payment of their salaries</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -0.74s; background-position: 0px 3.24rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">10%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">SatoshiDice.com</b>
+                  <small class="contributionAmount">100.43 BCH</small>
+                </span>
+                <q class="contributionComment">https://SatoshiDice.com</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -5.21s; background-position: 0px 3.47rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">4%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">Shadow Of Harbringer</b>
+                  <small class="contributionAmount">36.31 BCH</small>
+                </span>
+                <q class="contributionComment">BCHN Node Project FTW!</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -12.91s; background-position: 0px 3.5rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">3%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">molecular</b>
+                  <small class="contributionAmount">29.11 BCH</small>
+                </span>
+                <q class="contributionComment">choice! how awesome.</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -3.8s; background-position: 0px 3.5rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">3%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">molecular's drunk uncle</b>
+                  <small class="contributionAmount">28.95 BCH</small>
+                </span>
+                <q class="contributionComment">I don't know what this is, but molecular told me to click certain buttons to move some funds here for more Vodka.</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -4.77s; background-position: 0px 3.54rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">2%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">Masanobu Fukuoka</b>
+                  <small class="contributionAmount">16.40 BCH</small>
+                </span>
+                <q class="contributionComment">The father of natural farming principles</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -11.98s; background-position: 0px 3.56rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">1%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">峨眉山</b>
+                  <small class="contributionAmount">12.04 BCH</small>
+                </span>
+                <q class="contributionComment">早晨的太阳升起</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -3.87s; background-position: 0px 3.56rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">1%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">zveda</b>
+                  <small class="contributionAmount">11.12 BCH</small>
+                </span>
+                <q class="contributionComment">Pls no taxerino</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -7.48s; background-position: 0px 3.56rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">1%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">MattMinerShill</b>
+                  <small class="contributionAmount">10.42 BCH</small>
+                </span>
+                <q class="contributionComment">Because the IFP is a Tax, and thats not what BCH stands for. </q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -14.63s; background-position: 0px 3.56rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">1%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">Anonymous Pelican</b>
+                  <small class="contributionAmount">10.25 BCH</small>
+                </span>
+                <q class="contributionComment">gogogo!</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -7.17s; background-position: 0px 3.56rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">1%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">gammadelta</b>
+                  <small class="contributionAmount">10.12 BCH</small>
+                </span>
+                <q class="contributionComment">for positive change</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -9.99s; background-position: 0px 3.56rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">1%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">alphabeta</b>
+                  <small class="contributionAmount">10.00 BCH</small>
+                </span>
+                <q class="contributionComment">vires in numeris</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -14.15s; background-position: 0px 3.57rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">1%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias" style="opacity: 0.37;">Anonymous</b>
+                  <small class="contributionAmount">9.74 BCH</small>
+                </span>
+                <q class="contributionComment" style="display: none;"></q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -10.8s; background-position: 0px 3.57rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">1%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">Order Without Power</b>
+                  <small class="contributionAmount">9.22 BCH</small>
+                </span>
+                <q class="contributionComment" style="display: none;"></q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -8.57s; background-position: 0px 3.57rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">1%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">Haruki Murakami</b>
+                  <small class="contributionAmount">7.20 BCH</small>
+                </span>
+                <q class="contributionComment">Is the best !!</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -13.75s; background-position: 0px 3.58rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">1%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">Henry Cashlitt</b>
+                  <small class="contributionAmount">6.31 BCH</small>
+                </span>
+                <q class="contributionComment">Bitcoin Cash (BCH): Upgraded money for the world</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -6.18s; background-position: 0px 3.58rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias" style="opacity: 0.37;">Anonymous</b>
+                  <small class="contributionAmount">4.31 BCH</small>
+                </span>
+                <q class="contributionComment" style="display: none;"></q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -14.74s; background-position: 0px 3.59rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">legal_username</b>
+                  <small class="contributionAmount">4.03 BCH</small>
+                </span>
+                <q class="contributionComment">let's do this</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -6.15s; background-position: 0px 3.59rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">Sam</b>
+                  <small class="contributionAmount">2.10 BCH</small>
+                </span>
+                <q class="contributionComment">time to get serious</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -3.32s; background-position: 0px 3.59rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">Suzuki Subarashi</b>
+                  <small class="contributionAmount">2.09 BCH</small>
+                </span>
+                <q class="contributionComment">let's get this bad boy funded</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -9.81s; background-position: 0px 3.59rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">emergent_reasons#100🌵</b>
+                  <small class="contributionAmount">2.05 BCH</small>
+                </span>
+                <q class="contributionComment">FYI Large pledges will allow more people to participate by reducing the minimum.</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -11.73s; background-position: 0px 3.59rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">anime is okay</b>
+                  <small class="contributionAmount">2.03 BCH</small>
+                </span>
+                <q class="contributionComment" style="display: none;"></q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -1.08s; background-position: 0px 3.59rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">Monica</b>
+                  <small class="contributionAmount">2.02 BCH</small>
+                </span>
+                <q class="contributionComment">The revolution will not be centralized</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -6.23s; background-position: 0px 3.59rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">huckfinne</b>
+                  <small class="contributionAmount">2.01 BCH</small>
+                </span>
+                <q class="contributionComment" style="display: none;"></q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -8.98s; background-position: 0px 3.59rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">gm</b>
+                  <small class="contributionAmount">1.70 BCH</small>
+                </span>
+                <q class="contributionComment">Responding to: I'll increase my Bitcoin Cash Node Flipstarter pledge by 1 BCH for every new contributor</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -1.46s; background-position: 0px 3.59rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">Jt Blockparty Freeman</b>
+                  <small class="contributionAmount">1.63 BCH</small>
+                </span>
+                <q class="contributionComment" style="display: none;"></q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -4.01s; background-position: 0px 3.59rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">Keith Patrick</b>
+                  <small class="contributionAmount">1.60 BCH</small>
+                </span>
+                <q class="contributionComment">I promise I won't shill fund.honkhonk.io anymore. </q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -2.77s; background-position: 0px 3.59rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">Kaizen517</b>
+                  <small class="contributionAmount">1.57 BCH</small>
+                </span>
+                <q class="contributionComment" style="display: none;"></q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -6.73s; background-position: 0px 3.59rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">Anonymous</b>
+                  <small class="contributionAmount">1.55 BCH</small>
+                </span>
+                <q class="contributionComment">Thanks</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -2.16s; background-position: 0px 3.59rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">Sur_Clyde_Hoffenfelder</b>
+                  <small class="contributionAmount">1.51 BCH</small>
+                </span>
+                <q class="contributionComment" style="display: none;"></q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -14.53s; background-position: 0px 3.59rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">Laura </b>
+                  <small class="contributionAmount">1.50 BCH</small>
+                </span>
+                <q class="contributionComment">Number Go Up Please</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -13.81s; background-position: 0px 3.59rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">namby</b>
+                  <small class="contributionAmount">1.49 BCH</small>
+                </span>
+                <q class="contributionComment">wake up miners</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -13.1s; background-position: 0px 3.59rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">BitcoinOutLoud</b>
+                  <small class="contributionAmount">1.49 BCH</small>
+                </span>
+                <q class="contributionComment">P2P cash for the world &amp;lt;3</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -11.83s; background-position: 0px 3.59rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">Anonymous</b>
+                  <small class="contributionAmount">1.44 BCH</small>
+                </span>
+                <q class="contributionComment">It's more than I can afford but I love BCH &amp;amp; world needs electronic P2P money.</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -6.36s; background-position: 0px 3.59rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">Lopokoko</b>
+                  <small class="contributionAmount">1.44 BCH</small>
+                </span>
+                <q class="contributionComment">P2P Electronic Cash for the world!</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -4.61s; background-position: 0px 3.59rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias" style="opacity: 0.37;">Anonymous</b>
+                  <small class="contributionAmount">1.42 BCH</small>
+                </span>
+                <q class="contributionComment" style="display: none;"></q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -0.44s; background-position: 0px 3.6rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">lugaxker</b>
+                  <small class="contributionAmount">1.20 BCH</small>
+                </span>
+                <q class="contributionComment">Electronic Cash Without a Trusted Third Party</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -3.18s; background-position: 0px 3.6rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">dagurval</b>
+                  <small class="contributionAmount">1.02 BCH</small>
+                </span>
+                <q class="contributionComment">Participating in a historical transaction</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -14.65s; background-position: 0px 3.6rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias" style="opacity: 0.37;">Anonymous</b>
+                  <small class="contributionAmount">1.01 BCH</small>
+                </span>
+                <q class="contributionComment" style="display: none;"></q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -3.02s; background-position: 0px 3.6rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">Eric Reid</b>
+                  <small class="contributionAmount">1.00 BCH</small>
+                </span>
+                <q class="contributionComment" style="display: none;"></q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -3.74s; background-position: 0px 3.6rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias" style="opacity: 0.37;">Anonymous</b>
+                  <small class="contributionAmount">1.00 BCH</small>
+                </span>
+                <q class="contributionComment" style="display: none;"></q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -14.06s; background-position: 0px 3.6rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias" style="opacity: 0.37;">Anonymous</b>
+                  <small class="contributionAmount">1.00 BCH</small>
+                </span>
+                <q class="contributionComment">Money for everyone, with integrity and freedom</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -2.06s; background-position: 0px 3.6rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">Why cryptocurrencies?</b>
+                  <small class="contributionAmount">0.99 BCH</small>
+                </span>
+                <q class="contributionComment">https://whycryptocurrencies.com/</q>
+              </span>
+            </li><li>
+              <div>
+                <div class="contributionWaves" style="animation-delay: -8.2s; background-position: 0px 3.6rem;"></div>
+                <div class="contributionDisplay"></div>
+                <span class="contributionPercent">0%</span>
+              </div>
+              <span>
+                <span>
+                  <b class="contributionAlias">Sancho</b>
+                  <small class="contributionAmount">0.96 BCH</small>
+                </span>
+                <q class="contributionComment">Bitcoin Cash para todo el mundo</q>
+              </span>
+            </li></ul>
+          </section>
+        </aside>
+      </main>
+
+    </div>
+  </div>
+
+  <!-- Site footer -->
+  <footer class="page-footer green">
+    <div class="container">
+      <div class="row">
+        <div class="col l5 s12">
+          <h5 class="white-text" data-string="footerLabel">Nosotros</h5>
+          <p class="grey-text text-lighten-4" data-string="footerText">Somos un grupo de voluntarios que creemos en la importancia de establecer métodos de financiación voluntaria efectivos y sostenibles. Flipstarter es un ejemplo de cómo recaudar fondos sin custodia y con mínima confianza involucrada.</p>
+        </div>
+        <div class="col l2 m4 s4 offset-l1">
+          <h5 class="white-text" data-string="socialLabel">Social</h5>
+          <ul>
+            <li>
+              <a class="white-text valign-wrapper" href="https://twitter.com/flipstartercash">
+                <i class="icon-chat"></i>
+                &nbsp;
+                <span data-string="twitter">Twitter</span>
+              </a>
+            </li>
+            <li>
+              <a class="white-text valign-wrapper" href="https://read.cash/@flipstarter">
+                <i class="icon-info"></i>
+                &nbsp;
+                <span data-string="read.cash">Read.cash</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col l2 m4 s4">
+          <h5 class="white-text" data-string="contactLabel">Contacto</h5>
+          <ul>
+            <li>
+              <a class="white-text valign-wrapper" href="mailto:info@flipstarter.cash">
+                <i class="icon-email"></i>
+                &nbsp;
+                <span data-string="email">Email</span>
+              </a>
+            </li>
+            <li>
+              <a class="white-text valign-wrapper" href="mailto:security@flipstarter.cash">
+                <i class="icon-security"></i>
+                &nbsp;
+                <span data-string="security">Securidad</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col l2 m4 s4">
+          <h5 class="white-text" data-string="codeLabel">Código</h5>
+          <ul>
+            <li>
+              <a class="white-text valign-wrapper" href="https://gitlab.com/groups/flipstarter/-/issues">
+                <i class="icon-report_problem"></i>
+                &nbsp;
+                <span data-string="issues">Problemas</span>
+              </a>
+            </li>
+            <li>
+              <a class="white-text valign-wrapper" href="https://gitlab.com/flipstarter">
+                <i class="icon-code"></i>
+                &nbsp;
+                <span data-string="source">Codigo fuente</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container center" style="opacity: 0.65;">
+        <span data-string="copyright">El sitio web y los activos cuentan con derechos de autor por los respectivos autores en 2020, con licenciados para uso público bajo la</span>
+        <a href="https://gitlab.com/emergent-reasons/funding-traction/blob/master/LICENSE" style="color: inherit; border-bottom: 1px dashed rgba(256, 256, 256, 0.33)" data-string="license">licencia MIT.</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="languageSelector" class="fixed-action-btn">
+    <b id="currentLanguage" data-string="changeLanguage">Cambiar idioma</b>
+    <a class="btn-floating btn-large green"><i class="large icon-translate"></i></a>
+    <ul style="float: right; text-align: right; margin-right: 0.5rem;">
+      <li><a class="btn-floating purple darken-2" style="text-align: center;" id="translateEnglish">En</a></li>
+      <li><a class="btn-floating pink darken-2" style="text-align: center;" id="translateChinese">Cn</a></li>
+      <!--                <li><a class="btn-floating red darken-1" style='text-align: center;' id='translateJapanese'>Ja</a></li> -->
+      <li><a class="btn-floating orange darken-2" style="text-align: center;" id="translateSpanish">Es</a></li>
+    </ul>
+  </div>
+
+  <!-- -->
+  <template id="recipientTemplate">
+    <li class="col s6 m6 l12">
+      <a>
+        <img>
+        <span>
+          <b></b>
+          <i></i>
+        </span>
+      </a>
+    </li>
+  </template>
+  <template id="contributionTemplate">
+    <li>
+      <div>
+        <div class="contributionWaves"></div>
+        <div class="contributionDisplay"></div>
+        <span class="contributionPercent"></span>
+      </div>
+      <span>
+        <span>
+          <b class="contributionAlias"></b>
+          <small class="contributionAmount"></small>
+        </span>
+        <q class="contributionComment"></q>
+      </span>
+    </li>
+  </template>
+  <template id="emptyContributionMessage">
+    <li style="display: block; text-align: center; color: rgba(0, 0, 0, 0.5); padding: 2rem;">
+      <i data-string="contributorEmpty1">Nadie ha hecho una promesa todavía.</i>
+      <br>
+      <i data-string="contributorEmpty2">Puedes ser el primero.</i>
+    </li>
+  </template>
+
+  <!-- Load the javascript as the last step to ensure fastest load time. -->
+  <script src="js/application.js"></script>
+
+  <!-- -->
+  <audio src="snd/applause.mp3" id="applause"></audio>
+
+
+</body></html>
